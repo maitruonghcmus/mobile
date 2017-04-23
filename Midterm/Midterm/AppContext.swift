@@ -12,7 +12,7 @@ class AppContext: NSObject {
     
     static let Instance = AppContext()
     
-    private init(){
+    private override init(){
         
     }
 

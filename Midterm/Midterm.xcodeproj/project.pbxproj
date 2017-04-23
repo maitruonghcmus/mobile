@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833D1EACB590008A066A /* AreaTableViewController.swift */; };
+		8FA783401EACB5E7008A066A /* TableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833F1EACB5E7008A066A /* TableVIewCell.swift */; };
+		8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783411EACBA06008A066A /* AreaViewController.swift */; };
+		8FA783461EACC136008A066A /* MyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783441EACC136008A066A /* MyFileManager.swift */; };
+		8FA783471EACC136008A066A /* MySqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783451EACC136008A066A /* MySqlite.swift */; };
+		8FA7834A1EACC16B008A066A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA783491EACC16B008A066A /* libsqlite3.tbd */; };
 		B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F201EA5EA7D001242D7 /* DataContext.swift */; };
 		B1439F231EA60312001242D7 /* QueryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F221EA60312001242D7 /* QueryContext.swift */; };
 		B1439F251EA61374001242D7 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F241EA61374001242D7 /* AppContext.swift */; };
@@ -23,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8FA7833D1EACB590008A066A /* AreaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewController.swift; sourceTree = "<group>"; };
+		8FA7833F1EACB5E7008A066A /* TableVIewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableVIewCell.swift; sourceTree = "<group>"; };
+		8FA783411EACBA06008A066A /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
+		8FA783431EACC136008A066A /* Midterm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Midterm-Bridging-Header.h"; sourceTree = "<group>"; };
+		8FA783441EACC136008A066A /* MyFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileManager.swift; sourceTree = "<group>"; };
+		8FA783451EACC136008A066A /* MySqlite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySqlite.swift; sourceTree = "<group>"; };
+		8FA783491EACC16B008A066A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B1439F201EA5EA7D001242D7 /* DataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContext.swift; sourceTree = "<group>"; };
 		B1439F221EA60312001242D7 /* QueryContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryContext.swift; sourceTree = "<group>"; };
 		B1439F241EA61374001242D7 /* AppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
@@ -45,15 +58,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA7834A1EACC16B008A066A /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FA783481EACC16B008A066A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FA783491EACC16B008A066A /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B1439F261EA61395001242D7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				8FA783431EACC136008A066A /* Midterm-Bridging-Header.h */,
+				8FA783441EACC136008A066A /* MyFileManager.swift */,
+				8FA783451EACC136008A066A /* MySqlite.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -63,6 +88,7 @@
 			children = (
 				B181D2B81EA4FA4C00CCFA01 /* Midterm */,
 				B181D2B71EA4FA4C00CCFA01 /* Products */,
+				8FA783481EACC16B008A066A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +142,9 @@
 				B1439F201EA5EA7D001242D7 /* DataContext.swift */,
 				B1439F221EA60312001242D7 /* QueryContext.swift */,
 				B1439F241EA61374001242D7 /* AppContext.swift */,
+				8FA7833D1EACB590008A066A /* AreaTableViewController.swift */,
+				8FA7833F1EACB5E7008A066A /* TableVIewCell.swift */,
+				8FA783411EACBA06008A066A /* AreaViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -193,13 +222,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B181D2DC1EA5082400CCFA01 /* OrderDetail.swift in Sources */,
+				8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */,
 				B1439F251EA61374001242D7 /* AppContext.swift in Sources */,
+				8FA783461EACC136008A066A /* MyFileManager.swift in Sources */,
 				B1439F231EA60312001242D7 /* QueryContext.swift in Sources */,
+				8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */,
 				B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */,
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
+				8FA783471EACC136008A066A /* MySqlite.swift in Sources */,
 				B181D2D21EA4FBDD00CCFA01 /* Table.swift in Sources */,
 				B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */,
 				B181D2D61EA4FC1200CCFA01 /* MenuItem.swift in Sources */,
+				8FA783401EACB5E7008A066A /* TableVIewCell.swift in Sources */,
 				B181D2D41EA4FBEF00CCFA01 /* Area.swift in Sources */,
 				B181D2BA1EA4FA4C00CCFA01 /* AppDelegate.swift in Sources */,
 			);
@@ -328,6 +362,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IMIT.Midterm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Midterm/Midterm-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -340,6 +375,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IMIT.Midterm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Midterm/Midterm-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
