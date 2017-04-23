@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F201EA5EA7D001242D7 /* DataContext.swift */; };
+		B1439F231EA60312001242D7 /* QueryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F221EA60312001242D7 /* QueryContext.swift */; };
+		B1439F251EA61374001242D7 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F241EA61374001242D7 /* AppContext.swift */; };
 		B181D2BA1EA4FA4C00CCFA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181D2B91EA4FA4C00CCFA01 /* AppDelegate.swift */; };
 		B181D2BF1EA4FA4C00CCFA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B181D2BD1EA4FA4C00CCFA01 /* Main.storyboard */; };
 		B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B181D2C01EA4FA4C00CCFA01 /* Midterm.xcdatamodeld */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1439F201EA5EA7D001242D7 /* DataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContext.swift; sourceTree = "<group>"; };
+		B1439F221EA60312001242D7 /* QueryContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryContext.swift; sourceTree = "<group>"; };
+		B1439F241EA61374001242D7 /* AppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		B181D2B61EA4FA4C00CCFA01 /* Midterm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midterm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B181D2B91EA4FA4C00CCFA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B181D2BE1EA4FA4C00CCFA01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +51,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1439F261EA61395001242D7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		B181D2AD1EA4FA4C00CCFA01 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +77,7 @@
 		B181D2B81EA4FA4C00CCFA01 /* Midterm */ = {
 			isa = PBXGroup;
 			children = (
+				B1439F261EA61395001242D7 /* Helper */,
 				B181D2D01EA4FA6200CCFA01 /* Controller */,
 				B181D2CF1EA4FA5D00CCFA01 /* View */,
 				B181D2CE1EA4FA5700CCFA01 /* Model */,
@@ -99,6 +113,9 @@
 		B181D2D01EA4FA6200CCFA01 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B1439F201EA5EA7D001242D7 /* DataContext.swift */,
+				B1439F221EA60312001242D7 /* QueryContext.swift */,
+				B1439F241EA61374001242D7 /* AppContext.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -176,6 +193,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B181D2DC1EA5082400CCFA01 /* OrderDetail.swift in Sources */,
+				B1439F251EA61374001242D7 /* AppContext.swift in Sources */,
+				B1439F231EA60312001242D7 /* QueryContext.swift in Sources */,
+				B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */,
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
 				B181D2D21EA4FBDD00CCFA01 /* Table.swift in Sources */,
 				B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */,
