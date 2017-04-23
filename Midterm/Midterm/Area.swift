@@ -14,6 +14,9 @@ public class Area: NSObject {
     var Description: String = ""
     var Images: [String] = []
     
+    override init(){
+    }
+    
     init(Id:Int,Name:String,Description:String,Images:[String]) {
         self.Id = Id
         self.Name = Name
@@ -121,6 +124,38 @@ public class Area: NSObject {
         }
         else {
             print("query all area not ok")
+        }
+        sqlite3_finalize(sqlPointer)
+        sqlite3_close(dbPointer)
+        return result
+    }
+    public static func get(id: Int) -> Area {
+        var result = Area()
+        let dbPointer = MySqlite.open()
+        let query = "SELECT id, name, description FROM area WHERE id=?;"
+        var sqlPointer : OpaquePointer? = nil
+        if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
+            sqlite3_bind_int(sqlPointer, 1, Int32(id))
+            if sqlite3_step(sqlPointer) == SQLITE_DONE {
+                result = Area(Id: Int(sqlite3_column_int(sqlPointer, 0)),
+                                Name: String(cString: sqlite3_column_text(sqlPointer, 1)!),
+                                Description: String(cString: sqlite3_column_text(sqlPointer, 2)!),
+                                Images:[String]())
+                let queryImage = "SELECT path FROM image WHERE areaid = ?"
+                var sqlPointerImage : OpaquePointer? = nil
+                if sqlite3_prepare_v2(dbPointer, queryImage, -1, &sqlPointerImage, nil) == SQLITE_OK {
+                    sqlite3_bind_int(sqlPointerImage, 1, Int32(result.Id))
+                    while sqlite3_step(sqlPointerImage) == SQLITE_ROW {
+                        let path = String(cString: sqlite3_column_text(sqlPointerImage, 0)!)
+                        result.Images.append(path)
+                    }
+                    print("select one area success")
+                }
+                sqlite3_finalize(sqlPointerImage)
+            }
+        }
+        else {
+            print("query one area not ok")
         }
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)

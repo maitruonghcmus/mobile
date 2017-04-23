@@ -202,15 +202,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Area" id="a2Q-Jr-w47">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="edit" id="IA3-Wr-T4P"/>
-                            <barButtonItem systemItem="add" id="7Pi-Tg-nhY">
-                                <connections>
-                                    <segue destination="rDZ-eZ-Ai5" kind="show" identifier="SegueShowFunctionAreaID" id="v9a-qg-Lvd"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Pi-Tg-nhY">
+                            <connections>
+                                <action selector="clickAddButton:" destination="o0n-Zs-Okn" id="1cc-70-qcr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="rDZ-eZ-Ai5" kind="show" identifier="SegueShowAreaViewID" id="253-A6-wdM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3c-p3-H0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,9 +252,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tnB-hu-Nsp">
-                                <rect key="frame" x="16" y="191" width="343" height="476"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ng-uf-59g">
                                 <rect key="frame" x="16" y="162" width="47" height="21"/>
                                 <constraints>
@@ -270,25 +267,59 @@
                                     <action selector="clickAddImage:" destination="rDZ-eZ-Ai5" eventType="touchUpInside" id="3OM-lG-vD9"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ffg-cf-p80">
+                                <rect key="frame" x="16" y="192" width="343" height="475"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="828-ht-klB">
+                                    <size key="itemSize" width="139" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CollectionViewCell" reuseIdentifier="collectionviewcell" id="Pyb-Yt-zuC" customClass="CollectionViewCell" customModule="Midterm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="139" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SAd-6e-EHr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="139" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="SAd-6e-EHr" firstAttribute="top" secondItem="Pyb-Yt-zuC" secondAttribute="top" id="bdK-1K-9FV"/>
+                                            <constraint firstItem="SAd-6e-EHr" firstAttribute="leading" secondItem="Pyb-Yt-zuC" secondAttribute="leading" id="cwV-zZ-wab"/>
+                                            <constraint firstAttribute="bottom" secondItem="SAd-6e-EHr" secondAttribute="bottom" id="gNt-bu-KNd"/>
+                                            <constraint firstAttribute="trailing" secondItem="SAd-6e-EHr" secondAttribute="trailing" id="vke-B4-udt"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="SAd-6e-EHr" id="1q1-oe-8MU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="j0Z-Eh-CGv" firstAttribute="leading" secondItem="7Ng-uf-59g" secondAttribute="trailing" constant="8" id="0r7-8o-dm6"/>
                             <constraint firstItem="7Ng-uf-59g" firstAttribute="leading" secondItem="6BK-ic-Ssx" secondAttribute="leadingMargin" id="1gV-BE-zTo"/>
-                            <constraint firstItem="tnB-hu-Nsp" firstAttribute="top" secondItem="7Ng-uf-59g" secondAttribute="bottom" constant="8" id="7Nb-Wz-Z2S"/>
                             <constraint firstItem="j0Z-Eh-CGv" firstAttribute="top" secondItem="qlY-tN-6CF" secondAttribute="bottom" constant="8" id="8Or-bm-KaD"/>
+                            <constraint firstItem="Ffg-cf-p80" firstAttribute="top" secondItem="j0Z-Eh-CGv" secondAttribute="bottom" constant="8" id="9lT-DT-YaH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ffg-cf-p80" secondAttribute="trailing" id="CiY-qw-Cwc"/>
                             <constraint firstItem="RUJ-1f-Mgt" firstAttribute="trailing" secondItem="6BK-ic-Ssx" secondAttribute="trailingMargin" id="FdM-Gv-eAL"/>
+                            <constraint firstItem="Ffg-cf-p80" firstAttribute="leading" secondItem="6BK-ic-Ssx" secondAttribute="leadingMargin" id="Gou-6O-bTT"/>
                             <constraint firstItem="toC-Hh-1TY" firstAttribute="top" secondItem="140-Wi-fyk" secondAttribute="bottom" constant="8" id="IoI-eu-NCm"/>
                             <constraint firstItem="7Ng-uf-59g" firstAttribute="top" secondItem="qlY-tN-6CF" secondAttribute="bottom" constant="8" id="MdD-2p-nvI"/>
                             <constraint firstItem="140-Wi-fyk" firstAttribute="top" secondItem="DLi-4J-Tco" secondAttribute="bottom" constant="8" id="NUa-fC-Y1C"/>
+                            <constraint firstItem="8A4-uV-dcM" firstAttribute="top" secondItem="Ffg-cf-p80" secondAttribute="bottom" id="SzZ-tC-646"/>
                             <constraint firstItem="qlY-tN-6CF" firstAttribute="top" secondItem="RUJ-1f-Mgt" secondAttribute="bottom" constant="8" id="T1H-CI-dxb"/>
-                            <constraint firstItem="8A4-uV-dcM" firstAttribute="top" secondItem="tnB-hu-Nsp" secondAttribute="bottom" id="TEl-MY-a10"/>
                             <constraint firstItem="RUJ-1f-Mgt" firstAttribute="top" secondItem="toC-Hh-1TY" secondAttribute="bottom" constant="8" id="XtB-dg-XWW"/>
                             <constraint firstItem="toC-Hh-1TY" firstAttribute="leading" secondItem="6BK-ic-Ssx" secondAttribute="leadingMargin" id="b7C-Co-psO"/>
                             <constraint firstItem="140-Wi-fyk" firstAttribute="leading" secondItem="6BK-ic-Ssx" secondAttribute="leadingMargin" id="gf7-Fh-VOk"/>
                             <constraint firstItem="qlY-tN-6CF" firstAttribute="trailing" secondItem="6BK-ic-Ssx" secondAttribute="trailingMargin" id="i46-Oi-1Cm"/>
-                            <constraint firstItem="tnB-hu-Nsp" firstAttribute="leading" secondItem="6BK-ic-Ssx" secondAttribute="leadingMargin" id="i47-54-P36"/>
-                            <constraint firstItem="tnB-hu-Nsp" firstAttribute="trailing" secondItem="6BK-ic-Ssx" secondAttribute="trailingMargin" id="qLo-pY-2Sj"/>
                             <constraint firstItem="toC-Hh-1TY" firstAttribute="trailing" secondItem="6BK-ic-Ssx" secondAttribute="trailingMargin" id="r1f-hU-9uP"/>
                             <constraint firstItem="140-Wi-fyk" firstAttribute="trailing" secondItem="6BK-ic-Ssx" secondAttribute="trailingMargin" id="rDv-Zd-Qid"/>
                             <constraint firstItem="qlY-tN-6CF" firstAttribute="leading" secondItem="6BK-ic-Ssx" secondAttribute="leadingMargin" id="uqR-Dp-mXr"/>
@@ -298,17 +329,18 @@
                     <navigationItem key="navigationItem" title="Add Area" id="3XU-Sr-nuM">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="nVu-M9-ECq">
                             <connections>
-                                <segue destination="o0n-Zs-Okn" kind="show" identifier="SegueShowAreaID" id="4W8-Nm-peM"/>
+                                <segue destination="q6j-P4-Y5Q" kind="unwind" identifier="UnwindSegueToAreaTableViewID" unwindAction="unwindToAreaTableViewWithUnwindSegue:" id="Es0-p5-4dy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="tnB-hu-Nsp" id="XtH-tq-uIV"/>
+                        <outlet property="collectionView" destination="Ffg-cf-p80" id="DeC-2y-FNs"/>
                         <outlet property="textDescription" destination="qlY-tN-6CF" id="WnZ-t0-qBp"/>
                         <outlet property="textName" destination="toC-Hh-1TY" id="6WM-Rc-ARh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKh-ds-jHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="q6j-P4-Y5Q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3301.5999999999999" y="2126.0869565217395"/>
         </scene>
@@ -609,7 +641,7 @@
         <!--Setting-->
         <scene sceneID="jXl-YP-3Zu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jsf-Un-f30" sceneMemberID="viewController">
+                <navigationController id="Jsf-Un-f30" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" id="a0c-9P-8R1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nV1-uR-yZN">
@@ -687,7 +719,4 @@
             <point key="canvasLocation" x="2460" y="-663.41829085457277"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4W8-Nm-peM"/>
-    </inferredMetricsTieBreakers>
 </document>

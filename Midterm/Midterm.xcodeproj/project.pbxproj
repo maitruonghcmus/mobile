@@ -13,6 +13,7 @@
 		8FA783461EACC136008A066A /* MyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783441EACC136008A066A /* MyFileManager.swift */; };
 		8FA783471EACC136008A066A /* MySqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783451EACC136008A066A /* MySqlite.swift */; };
 		8FA7834A1EACC16B008A066A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA783491EACC16B008A066A /* libsqlite3.tbd */; };
+		8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */; };
 		B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F201EA5EA7D001242D7 /* DataContext.swift */; };
 		B1439F231EA60312001242D7 /* QueryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F221EA60312001242D7 /* QueryContext.swift */; };
 		B1439F251EA61374001242D7 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F241EA61374001242D7 /* AppContext.swift */; };
@@ -36,6 +37,7 @@
 		8FA783441EACC136008A066A /* MyFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileManager.swift; sourceTree = "<group>"; };
 		8FA783451EACC136008A066A /* MySqlite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySqlite.swift; sourceTree = "<group>"; };
 		8FA783491EACC16B008A066A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B1439F201EA5EA7D001242D7 /* DataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContext.swift; sourceTree = "<group>"; };
 		B1439F221EA60312001242D7 /* QueryContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryContext.swift; sourceTree = "<group>"; };
 		B1439F241EA61374001242D7 /* AppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				8FA7833D1EACB590008A066A /* AreaTableViewController.swift */,
 				8FA7833F1EACB5E7008A066A /* TableVIewCell.swift */,
 				8FA783411EACBA06008A066A /* AreaViewController.swift */,
+				8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
 				8FA783471EACC136008A066A /* MySqlite.swift in Sources */,
 				B181D2D21EA4FBDD00CCFA01 /* Table.swift in Sources */,
+				8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */,
 				B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */,
 				B181D2D61EA4FC1200CCFA01 /* MenuItem.swift in Sources */,
 				8FA783401EACB5E7008A066A /* TableVIewCell.swift in Sources */,
