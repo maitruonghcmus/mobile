@@ -229,31 +229,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="toC-Hh-1TY">
-                                <rect key="frame" x="16" y="57" width="343" height="30"/>
+                                <rect key="frame" x="16" y="101" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qlY-tN-6CF">
-                                <rect key="frame" x="16" y="124" width="343" height="30"/>
+                                <rect key="frame" x="16" y="168" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="140-Wi-fyk">
-                                <rect key="frame" x="16" y="28" width="343" height="21"/>
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUJ-1f-Mgt">
-                                <rect key="frame" x="16" y="95" width="343" height="21"/>
+                                <rect key="frame" x="16" y="139" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ng-uf-59g">
-                                <rect key="frame" x="16" y="162" width="47" height="21"/>
+                                <rect key="frame" x="16" y="206" width="47" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="0jG-WC-e6O"/>
                                 </constraints>
@@ -262,13 +262,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0Z-Eh-CGv">
-                                <rect key="frame" x="71" y="162" width="22" height="22"/>
+                                <rect key="frame" x="71" y="206" width="22" height="22"/>
                                 <connections>
                                     <action selector="clickAddImage:" destination="rDZ-eZ-Ai5" eventType="touchUpInside" id="3OM-lG-vD9"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ffg-cf-p80">
-                                <rect key="frame" x="16" y="192" width="343" height="475"/>
+                                <rect key="frame" x="16" y="236" width="343" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="828-ht-klB">
                                     <size key="itemSize" width="139" height="128"/>
@@ -329,6 +329,7 @@
                     <navigationItem key="navigationItem" title="Add Area" id="3XU-Sr-nuM">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="nVu-M9-ECq">
                             <connections>
+                                <action selector="clickSave" destination="rDZ-eZ-Ai5" id="i5p-m3-oZF"/>
                                 <segue destination="q6j-P4-Y5Q" kind="unwind" identifier="UnwindSegueToAreaTableViewID" unwindAction="unwindToAreaTableViewWithUnwindSegue:" id="Es0-p5-4dy"/>
                             </connections>
                         </barButtonItem>
@@ -591,7 +592,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aij-XQ-tXe" id="okp-ZY-TYF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
