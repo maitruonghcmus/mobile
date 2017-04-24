@@ -29,7 +29,8 @@ public class MySqlite {
     static func createTable() {
         let list : [(String,String)] = [
             ("area","CREATE TABLE IF NOT EXISTS area (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT);"),
-            ("image","CREATE TABLE IF NOT EXISTS image (id INTEGER PRIMARY KEY AUTOINCREMENT, areaid INTEGER, path TEXT);")
+            ("table","CREATE TABLE IF NOT EXISTS table (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT, areaid INTEGER, tablestatus INTEGER);"),
+            ("image","CREATE TABLE IF NOT EXISTS image (id INTEGER PRIMARY KEY AUTOINCREMENT, areaid INTEGER, tableid INTEGER, menuitemid INTEGER, path TEXT);")
                     ]
         let dbPointer = open()
         var sqlPointer : OpaquePointer? = nil

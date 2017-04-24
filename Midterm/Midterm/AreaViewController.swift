@@ -87,14 +87,14 @@ class AreaViewController: UIViewController,
             self.area.Description = textDescription.text!
             // check id = 0 do insert and id != 0 do update
             if self.area.Id == 0 {
-                Area.insert(value: self.area)
+                AreaContext.insert(value: self.area)
             }
             else {
-                Area.update(value: area)
+                AreaContext.update(value: area)
             }
             // call reload areas in AreaTableViewController
+            destination.loadData()
             destination.tableView.reloadData()
-            self.dismiss(animated: true, completion: nil)
         }
     }
 }

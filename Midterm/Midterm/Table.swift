@@ -13,7 +13,7 @@ import UIKit
 //    case Available = 1
 //}
 
-class Table: NSObject {
+public class Table: NSObject {
     var Id: Int = 0
     var Description: String = ""
     var Images: [String] = []
@@ -24,4 +24,16 @@ class Table: NSObject {
     var TableStatus: Int = 1
     //0 = Available
     //1 = Unavailable
+    
+    override init(){
+    }
+    
+    init(Id:Int,Description:String,Images:[String], Area:Area, TableStatus: Int) {
+        self.Id = Id
+        self.Description = Description
+        self.Images = Images
+        self.Area = Area
+        self.TableStatus = TableStatus
+    }
+
 }

@@ -12,14 +12,16 @@ class AreaTableViewController: UITableViewController {
 
     var areas = [Area]()
     
+    func loadData() {
+        MySqlite.createTable()
+        areas = AreaContext.all()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
-        
-        MySqlite.createTable()
-        self.areas = Area.all()
-        
+        loadData();
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -74,14 +76,14 @@ class AreaTableViewController: UITableViewController {
     */
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        tableView.setEditing(true, animated: true)
-
+        
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
             self.performSegue(withIdentifier: "SegueShowAreaViewID", sender: index.row)
         }
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
-            Area.delete(id: self.areas[index.row].Id)
+            AreaContext.delete(id: self.areas[index.row].Id)
+            self.loadData()
             tableView.reloadData()
         }
         
