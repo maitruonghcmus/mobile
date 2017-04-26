@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class AreaViewController: UIViewController,
     UICollectionViewDelegateFlowLayout,
@@ -71,9 +72,17 @@ class AreaViewController: UIViewController,
     }
     
     @IBAction func clickSave() {
-        performSegue(withIdentifier: "UnwindSegueToAreaTableViewID", sender: nil)
+        
+        if textName.text!.isEmpty{
+            AppUtils.DisplayAlertMessage(title: "Error", message: "You must enter a name of area", controller: self)
+        }
+        else{
+            performSegue(withIdentifier: "UnwindSegueToAreaTableViewID", sender: nil)
+        }
     }
     
+    
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

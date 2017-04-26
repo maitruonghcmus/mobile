@@ -65,6 +65,35 @@ class TableTableViewController: UITableViewController {
     }
     
     
+    //Override for gesture
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            self.performSegue(withIdentifier: "SegueShowTableViewID", sender: index.row)
+        }
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
+            
+            
+            //alert
+            let alert = UIAlertController(title: "Delete table " + "\(self.tables[index.row].Id)", message: "Are you sure to do this action?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                print("Handle Ok logic here")
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
+            //DataContext.Instance.Tables.delete(id: self.tables[index.row].Id)
+            self.loadData()
+            tableView.reloadData()
+        }
+        
+        return [delete, edit]
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

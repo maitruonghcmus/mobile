@@ -390,7 +390,7 @@
                     <navigationItem key="navigationItem" title="Table" id="7nM-Kb-sqY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PYD-vA-c5q">
                             <connections>
-                                <segue destination="Xmj-7C-55g" kind="show" id="W5R-fq-WOu"/>
+                                <segue destination="Xmj-7C-55g" kind="show" identifier="SegueShowTableViewID" id="W5R-fq-WOu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

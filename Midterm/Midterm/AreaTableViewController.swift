@@ -73,7 +73,20 @@ class AreaTableViewController: UITableViewController {
         }
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
-            DataContext.Instance.Areas.delete(id: self.areas[index.row].Id)
+            
+            //alert
+            let alert = UIAlertController(title: "Delete Area " + "\(self.areas[index.row].Name)", message: "Are you sure to do this action?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                 DataContext.Instance.Areas.delete(id: self.areas[index.row].Id)
+                self.loadData()
+                tableView.reloadData()
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
+           
             self.loadData()
             tableView.reloadData()
         }
