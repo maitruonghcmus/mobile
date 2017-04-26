@@ -13,8 +13,7 @@ class AreaTableViewController: UITableViewController {
     var areas = [Area]()
     
     func loadData() {
-        MySqlite.createTable()
-        areas = AreaContext.all()
+        areas = DataContext.Instance.Areas.all()
     }
     
     override func viewDidLoad() {
@@ -82,7 +81,7 @@ class AreaTableViewController: UITableViewController {
         }
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
-            AreaContext.delete(id: self.areas[index.row].Id)
+            DataContext.Instance.Areas.delete(id: self.areas[index.row].Id)
             self.loadData()
             tableView.reloadData()
         }

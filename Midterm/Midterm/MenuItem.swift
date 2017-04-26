@@ -17,7 +17,7 @@ enum MenuItemType : Int {
 class MenuItem: NSObject {
     var Id: Int = 0
     var Name: String = ""
-    var Price: Decimal = 0.0
+    var Price: Double = 0.0
     var Description: String = ""
     var Images: [String] = []
     
@@ -25,5 +25,16 @@ class MenuItem: NSObject {
     //Food = 1
     //Drink = 2
     
+    override init(){
+        
+    }
     
+    init(Id:Int,Name:String,Description:String,Price:Double,Images:[String], MenuItemType: Int) {
+        self.Id = Id
+        self.Name = Name
+        self.Description = Description
+        self.Price = Price
+        self.Images = Images
+        self.MenuItemType = MenuItemType
+    }
 }

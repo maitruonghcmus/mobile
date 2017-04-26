@@ -9,7 +9,7 @@
 import UIKit
 
 class AreaContext: NSObject {
-    public static func insert(value: Area) {
+    func insert(value: Area) {
         let dbPointer = MySqlite.open()
         var query = "INSERT INTO area (name, description) VALUES (?, ?);"
         var sqlPointer : OpaquePointer? = nil
@@ -43,7 +43,7 @@ class AreaContext: NSObject {
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
     }
-    public static func update(value: Area) {
+    func update(value: Area) {
         let dbPointer = MySqlite.open()
         let query = "UPDATE area SET name = ?, description = ? WHERE id = ?;"
         var sqlPointer : OpaquePointer? = nil
@@ -64,7 +64,7 @@ class AreaContext: NSObject {
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
     }
-    public static func delete(id: Int) {
+    func delete(id: Int) {
         let dbPointer = MySqlite.open()
         let query = "DELETE FROM area WHERE id = ?;"
         var sqlPointer : OpaquePointer? = nil
@@ -83,7 +83,7 @@ class AreaContext: NSObject {
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
     }
-    public static func all() -> [Area] {
+    func all() -> [Area] {
         var result = [Area]()
         let dbPointer = MySqlite.open()
         let query = "SELECT id, name, description FROM area;"
@@ -115,7 +115,7 @@ class AreaContext: NSObject {
         sqlite3_close(dbPointer)
         return result
     }
-    public static func get(id: Int) -> Area {
+    func get(id: Int) -> Area {
         var result = Area()
         let dbPointer = MySqlite.open()
         let query = "SELECT id, name, description FROM area WHERE id=?;"

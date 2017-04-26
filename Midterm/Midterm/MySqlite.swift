@@ -30,7 +30,8 @@ public class MySqlite {
         let list : [(String,String)] = [
             ("area","CREATE TABLE IF NOT EXISTS area (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT);"),
             ("table","CREATE TABLE IF NOT EXISTS table (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT, areaid INTEGER, tablestatus INTEGER);"),
-            ("image","CREATE TABLE IF NOT EXISTS image (id INTEGER PRIMARY KEY AUTOINCREMENT, areaid INTEGER, tableid INTEGER, menuitemid INTEGER, path TEXT);")
+            ("image","CREATE TABLE IF NOT EXISTS image (id INTEGER PRIMARY KEY AUTOINCREMENT, areaid INTEGER, tableid INTEGER, menuitemid INTEGER, path TEXT);"),
+            ("menuitem","CREATE TABLE IF NOT EXISTS menuitem (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price TEXT, description TEXT, menuitemtype INTEGER);")
                     ]
         let dbPointer = open()
         var sqlPointer : OpaquePointer? = nil

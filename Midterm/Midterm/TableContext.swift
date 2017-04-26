@@ -8,8 +8,8 @@
 
 import UIKit
 
-public class TableContext: NSObject {
-    public static func insert(value: Table) {
+class TableContext: NSObject {
+    func insert(value: Table) {
         let dbPointer = MySqlite.open()
         var query = "INSERT INTO table (description, areaid, tablestatus) VALUES (?, ?, ?);"
         var sqlPointer : OpaquePointer? = nil
@@ -44,7 +44,7 @@ public class TableContext: NSObject {
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
     }
-    public static func update(value: Table) {
+    func update(value: Table) {
         let dbPointer = MySqlite.open()
         let query = "UPDATE table SET description = ?, areaid = ?, tablestatus = ? WHERE id = ?;"
         var sqlPointer : OpaquePointer? = nil
@@ -66,7 +66,7 @@ public class TableContext: NSObject {
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
     }
-    public static func delete(id: Int) {
+    func delete(id: Int) {
         let dbPointer = MySqlite.open()
         let query = "DELETE FROM table WHERE id = ?;"
         var sqlPointer : OpaquePointer? = nil
@@ -85,7 +85,7 @@ public class TableContext: NSObject {
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
     }
-    public static func all() -> [Table] {
+    func all() -> [Table] {
         var result = [Table]()
         let dbPointer = MySqlite.open()
         let query = "SELECT id, description, areaid, tablestatus FROM table;"
@@ -97,7 +97,7 @@ public class TableContext: NSObject {
                                   Images: [String](),
                                   Area: Area(),
                                   TableStatus: Int(sqlite3_column_int(sqlPointer, 3)))
-                value.Area = AreaContext.get(id: Int(sqlite3_column_int(sqlPointer, 2)))
+                value.Area = DataContext.Instance.Areas.get(id: Int(sqlite3_column_int(sqlPointer, 2)))
                 let queryImage = "SELECT path FROM image WHERE areaid = ?"
                 var sqlPointerImage : OpaquePointer? = nil
                 if sqlite3_prepare_v2(dbPointer, queryImage, -1, &sqlPointerImage, nil) == SQLITE_OK {
@@ -119,7 +119,7 @@ public class TableContext: NSObject {
         sqlite3_close(dbPointer)
         return result
     }
-    public static func get(id: Int) -> Table {
+    func get(id: Int) -> Table {
         var result = Table()
         let dbPointer = MySqlite.open()
         let query = "SELECT id, description, areaid, tablestatus FROM table WHERE id=?;"
@@ -132,7 +132,7 @@ public class TableContext: NSObject {
                                Images: [String](),
                                Area: Area(),
                                TableStatus: Int(sqlite3_column_int(sqlPointer, 3)))
-                result.Area = AreaContext.get(id: Int(sqlite3_column_int(sqlPointer, 2)))
+                result.Area = DataContext.Instance.Areas.get(id: Int(sqlite3_column_int(sqlPointer, 2)))
                 let queryImage = "SELECT path FROM image WHERE areaid = ?"
                 var sqlPointerImage : OpaquePointer? = nil
                 if sqlite3_prepare_v2(dbPointer, queryImage, -1, &sqlPointerImage, nil) == SQLITE_OK {
