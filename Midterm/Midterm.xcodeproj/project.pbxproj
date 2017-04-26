@@ -36,6 +36,9 @@
 		B181D2D61EA4FC1200CCFA01 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181D2D51EA4FC1200CCFA01 /* MenuItem.swift */; };
 		B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181D2D91EA5081700CCFA01 /* Order.swift */; };
 		B181D2DC1EA5082400CCFA01 /* OrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181D2DB1EA5082400CCFA01 /* OrderDetail.swift */; };
+		B1FA6E341EB109FA0097B9ED /* MainTableDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E331EB109FA0097B9ED /* MainTableDetailTableViewController.swift */; };
+		B1FA6E361EB10A430097B9ED /* MainTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E351EB10A430097B9ED /* MainTableTableViewCell.swift */; };
+		B1FA6E381EB10A550097B9ED /* MainTableDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E371EB10A550097B9ED /* MainTableDetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		B181D2D51EA4FC1200CCFA01 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		B181D2D91EA5081700CCFA01 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B181D2DB1EA5082400CCFA01 /* OrderDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetail.swift; sourceTree = "<group>"; };
+		B1FA6E331EB109FA0097B9ED /* MainTableDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableDetailTableViewController.swift; sourceTree = "<group>"; };
+		B1FA6E351EB10A430097B9ED /* MainTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableTableViewCell.swift; sourceTree = "<group>"; };
+		B1FA6E371EB10A550097B9ED /* MainTableDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableDetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,8 @@
 				8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */,
 				8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */,
 				B10218721EB0979300692FFF /* TableTableViewCell.swift */,
+				B1FA6E351EB10A430097B9ED /* MainTableTableViewCell.swift */,
+				B1FA6E371EB10A550097B9ED /* MainTableDetailTableViewCell.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 				8FA783411EACBA06008A066A /* AreaViewController.swift */,
 				B102186E1EB0903900692FFF /* TableTableViewController.swift */,
 				B10218701EB0906500692FFF /* TableViewController.swift */,
+				B1FA6E331EB109FA0097B9ED /* MainTableDetailTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -272,15 +281,18 @@
 				8F08A0571EB023D1007FAA35 /* MenuItemContext.swift in Sources */,
 				B181D2DC1EA5082400CCFA01 /* OrderDetail.swift in Sources */,
 				8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */,
+				B1FA6E341EB109FA0097B9ED /* MainTableDetailTableViewController.swift in Sources */,
 				B102186F1EB0903900692FFF /* TableTableViewController.swift in Sources */,
 				8FD8424D1EAE6C1200F43A12 /* TableContext.swift in Sources */,
 				B1439F251EA61374001242D7 /* AppContext.swift in Sources */,
 				8FA783461EACC136008A066A /* MyFileManager.swift in Sources */,
+				B1FA6E361EB10A430097B9ED /* MainTableTableViewCell.swift in Sources */,
 				B1439F231EA60312001242D7 /* QueryContext.swift in Sources */,
 				8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */,
 				B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */,
 				8F08A0551EB01B89007FAA35 /* ImageContext.swift in Sources */,
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
+				B1FA6E381EB10A550097B9ED /* MainTableDetailTableViewCell.swift in Sources */,
 				B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */,
 				B10218751EB0A59600692FFF /* AppUtils.swift in Sources */,
 				8FA783471EACC136008A066A /* MySqlite.swift in Sources */,
