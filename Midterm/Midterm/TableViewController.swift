@@ -36,8 +36,8 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let result = self.DataValidate(tableNumber: tableNumber, area: area, description: description)
         
         if result.isEmpty {
-            let table = Table(Id: Int(tableNumber)!, Description: description, Images: [String](), Area: selectedArea, TableStatus: 1)
-            let isSuccess = DataContext.Instance.Tables.insert(value: table)
+            let table = Table(Id: 0, Description: description, Images: [Image](), Area: areas[areaPicker.selectedRow(inComponent: 0)], TableStatus: 1)
+            let isSuccess = DataContext.Instance.Tables.insert(value: table).Id != 0
             if isSuccess{
                 AppUtils.DisplayAlertMessage(title: "Success", message: "Table created", controller: self)
             }
