@@ -8,11 +8,6 @@
 
 import UIKit
 
-//enum TableStatus: Int {
-//    case Unavailable = 0
-//    case Available = 1
-//}
-
 public class Table: NSObject {
     var Id: Int = 0
     var Description: String = ""

@@ -11,7 +11,7 @@
 		8F08A0551EB01B89007FAA35 /* ImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A0541EB01B89007FAA35 /* ImageContext.swift */; };
 		8F08A0571EB023D1007FAA35 /* MenuItemContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A0561EB023D1007FAA35 /* MenuItemContext.swift */; };
 		8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833D1EACB590008A066A /* AreaTableViewController.swift */; };
-		8FA783401EACB5E7008A066A /* TableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833F1EACB5E7008A066A /* TableVIewCell.swift */; };
+		8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */; };
 		8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783411EACBA06008A066A /* AreaViewController.swift */; };
 		8FA783461EACC136008A066A /* MyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783441EACC136008A066A /* MyFileManager.swift */; };
 		8FA783471EACC136008A066A /* MySqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783451EACC136008A066A /* MySqlite.swift */; };
@@ -19,6 +19,10 @@
 		8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */; };
 		8FD8424D1EAE6C1200F43A12 /* TableContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8424C1EAE6C1200F43A12 /* TableContext.swift */; };
 		8FD8424F1EAE6DCC00F43A12 /* AreaContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8424E1EAE6DCB00F43A12 /* AreaContext.swift */; };
+		B102186F1EB0903900692FFF /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102186E1EB0903900692FFF /* TableTableViewController.swift */; };
+		B10218711EB0906500692FFF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218701EB0906500692FFF /* TableViewController.swift */; };
+		B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218721EB0979300692FFF /* TableTableViewCell.swift */; };
+		B10218751EB0A59600692FFF /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218741EB0A59600692FFF /* AppUtils.swift */; };
 		B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F201EA5EA7D001242D7 /* DataContext.swift */; };
 		B1439F231EA60312001242D7 /* QueryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F221EA60312001242D7 /* QueryContext.swift */; };
 		B1439F251EA61374001242D7 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1439F241EA61374001242D7 /* AppContext.swift */; };
@@ -39,7 +43,7 @@
 		8F08A0541EB01B89007FAA35 /* ImageContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContext.swift; sourceTree = "<group>"; };
 		8F08A0561EB023D1007FAA35 /* MenuItemContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemContext.swift; sourceTree = "<group>"; };
 		8FA7833D1EACB590008A066A /* AreaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewController.swift; sourceTree = "<group>"; };
-		8FA7833F1EACB5E7008A066A /* TableVIewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableVIewCell.swift; sourceTree = "<group>"; };
+		8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
 		8FA783411EACBA06008A066A /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
 		8FA783431EACC136008A066A /* Midterm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Midterm-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FA783441EACC136008A066A /* MyFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileManager.swift; sourceTree = "<group>"; };
@@ -48,6 +52,10 @@
 		8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8FD8424C1EAE6C1200F43A12 /* TableContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableContext.swift; sourceTree = "<group>"; };
 		8FD8424E1EAE6DCB00F43A12 /* AreaContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaContext.swift; sourceTree = "<group>"; };
+		B102186E1EB0903900692FFF /* TableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
+		B10218701EB0906500692FFF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		B10218721EB0979300692FFF /* TableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewCell.swift; sourceTree = "<group>"; };
+		B10218741EB0A59600692FFF /* AppUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		B1439F201EA5EA7D001242D7 /* DataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContext.swift; sourceTree = "<group>"; };
 		B1439F221EA60312001242D7 /* QueryContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryContext.swift; sourceTree = "<group>"; };
 		B1439F241EA61374001242D7 /* AppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
@@ -102,8 +110,9 @@
 		8FD842501EAE75E000F43A12 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
-				8FA7833F1EACB5E7008A066A /* TableVIewCell.swift */,
+				8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */,
 				8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */,
+				B10218721EB0979300692FFF /* TableTableViewCell.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -114,6 +123,7 @@
 				8FA783431EACC136008A066A /* Midterm-Bridging-Header.h */,
 				8FA783441EACC136008A066A /* MyFileManager.swift */,
 				8FA783451EACC136008A066A /* MySqlite.swift */,
+				B10218741EB0A59600692FFF /* AppUtils.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -138,9 +148,9 @@
 		B181D2B81EA4FA4C00CCFA01 /* Midterm */ = {
 			isa = PBXGroup;
 			children = (
+				B1439F261EA61395001242D7 /* Helper */,
 				8FD842501EAE75E000F43A12 /* CustomUI */,
 				8FD8424B1EAE6A3F00F43A12 /* Context */,
-				B1439F261EA61395001242D7 /* Helper */,
 				B181D2D01EA4FA6200CCFA01 /* Controller */,
 				B181D2CF1EA4FA5D00CCFA01 /* View */,
 				B181D2CE1EA4FA5700CCFA01 /* Model */,
@@ -179,6 +189,8 @@
 			children = (
 				8FA7833D1EACB590008A066A /* AreaTableViewController.swift */,
 				8FA783411EACBA06008A066A /* AreaViewController.swift */,
+				B102186E1EB0903900692FFF /* TableTableViewController.swift */,
+				B10218701EB0906500692FFF /* TableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -255,10 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10218711EB0906500692FFF /* TableViewController.swift in Sources */,
 				8FD8424F1EAE6DCC00F43A12 /* AreaContext.swift in Sources */,
 				8F08A0571EB023D1007FAA35 /* MenuItemContext.swift in Sources */,
 				B181D2DC1EA5082400CCFA01 /* OrderDetail.swift in Sources */,
 				8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */,
+				B102186F1EB0903900692FFF /* TableTableViewController.swift in Sources */,
 				8FD8424D1EAE6C1200F43A12 /* TableContext.swift in Sources */,
 				B1439F251EA61374001242D7 /* AppContext.swift in Sources */,
 				8FA783461EACC136008A066A /* MyFileManager.swift in Sources */,
@@ -267,13 +281,15 @@
 				B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */,
 				8F08A0551EB01B89007FAA35 /* ImageContext.swift in Sources */,
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
+				B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */,
+				B10218751EB0A59600692FFF /* AppUtils.swift in Sources */,
 				8FA783471EACC136008A066A /* MySqlite.swift in Sources */,
 				B181D2D21EA4FBDD00CCFA01 /* Table.swift in Sources */,
 				8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */,
 				8F08A0531EB01A8E007FAA35 /* Image.swift in Sources */,
 				B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */,
 				B181D2D61EA4FC1200CCFA01 /* MenuItem.swift in Sources */,
-				8FA783401EACB5E7008A066A /* TableVIewCell.swift in Sources */,
+				8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */,
 				B181D2D41EA4FBEF00CCFA01 /* Area.swift in Sources */,
 				B181D2BA1EA4FA4C00CCFA01 /* AppDelegate.swift in Sources */,
 			);

@@ -14,9 +14,10 @@ class Image: NSObject {
     var Table: Table?
     var MenuItem: MenuItem?
     var Path : String = ""
+    
     override init(){
-        
     }
+    
     init(Id: Int, Area: Area, Table: Table, MenuItem: MenuItem, Path: String){
         self.Id = Id
         self.Area = Area

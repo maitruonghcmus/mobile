@@ -17,6 +17,7 @@ final class DataContext {
     private init(){
         InitData()
     }
+    
     //MARK: *** Data Models Context
     
     var Tables = TableContext()

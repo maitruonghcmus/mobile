@@ -26,7 +26,6 @@ class MenuItem: NSObject {
     //Drink = 2
     
     override init(){
-        
     }
     
     init(Id:Int,Name:String,Description:String,Price:Double,Images:[String], MenuItemType: Int) {
