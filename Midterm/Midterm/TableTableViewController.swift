@@ -27,6 +27,10 @@ class TableTableViewController: UITableViewController {
         tables = DataContext.Instance.Tables.all()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

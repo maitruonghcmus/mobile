@@ -9,9 +9,11 @@
 import UIKit
 
 class TableContext: NSObject {
-    func insert(value: Table) {
+    func insert(value: Table) -> Bool {
+        var result = false
+        
         let dbPointer = MySqlite.open()
-        var query = "INSERT INTO table (description, areaid, tablestatus) VALUES (?, ?, ?);"
+        var query = "INSERT INTO tables (description, areaid, tablestatus) VALUES (?, ?, ?);"
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_text(sqlPointer, 1, value.Description.cString(using: .utf8), -1, SQLITE_TRANSIENT)
@@ -19,34 +21,47 @@ class TableContext: NSObject {
             sqlite3_bind_int(sqlPointer, 3, Int32(value.TableStatus))
             if sqlite3_step(sqlPointer) == SQLITE_DONE {
                 let id = sqlite3_last_insert_rowid(sqlPointer)
-                for image in value.Images {
-                    sqlite3_reset(sqlPointer)
-                    query = "INSERT INTO image (tableid, path) VALUES (?, ?);"
-                    if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
-                        sqlite3_bind_int(sqlPointer, 1, Int32(id))
-                        sqlite3_bind_text(sqlPointer, 2, image.cString(using: .utf8), -1, SQLITE_TRANSIENT)
-                        if sqlite3_step(sqlPointer) == SQLITE_DONE {
-                            print("created table image success")
+                
+                if value.Images.count > 0{
+                    for image in value.Images {
+                        sqlite3_reset(sqlPointer)
+                        query = "INSERT INTO image (tableid, path) VALUES (?, ?);"
+                        if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
+                            sqlite3_bind_int(sqlPointer, 1, Int32(id))
+                            sqlite3_bind_text(sqlPointer, 2, image.cString(using: .utf8), -1, SQLITE_TRANSIENT)
+                            if sqlite3_step(sqlPointer) == SQLITE_DONE {
+                                print("created table image success")
+                                result = true
+                            }
+                        }
+                        else {
+                            print("sql create table image fail")
+                            
                         }
                     }
-                    else {
-                        print("sql create table image fail")
-                    }
+                }else{
+                    result = true
                 }
+                
+                
             }
             else {
                 print("create table fail")
+            
             }
         }
         else {
             print("query create table not ok")
         }
+        
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
+        
+        return result
     }
     func update(value: Table) {
         let dbPointer = MySqlite.open()
-        let query = "UPDATE table SET description = ?, areaid = ?, tablestatus = ? WHERE id = ?;"
+        let query = "UPDATE tables SET description = ?, areaid = ?, tablestatus = ? WHERE id = ?;"
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_text(sqlPointer, 1, value.Description.cString(using: .utf8), -1, SQLITE_TRANSIENT)
@@ -68,7 +83,7 @@ class TableContext: NSObject {
     }
     func delete(id: Int) {
         let dbPointer = MySqlite.open()
-        let query = "DELETE FROM table WHERE id = ?;"
+        let query = "DELETE FROM tables WHERE id = ?;"
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_int(sqlPointer, 1, Int32(id))
@@ -88,7 +103,7 @@ class TableContext: NSObject {
     func all() -> [Table] {
         var result = [Table]()
         let dbPointer = MySqlite.open()
-        let query = "SELECT id, description, areaid, tablestatus FROM table;"
+        let query = "SELECT id, description, areaid, tablestatus FROM tables;"
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             while sqlite3_step(sqlPointer) == SQLITE_ROW {
@@ -97,7 +112,10 @@ class TableContext: NSObject {
                                   Images: [String](),
                                   Area: Area(),
                                   TableStatus: Int(sqlite3_column_int(sqlPointer, 3)))
-                value.Area = DataContext.Instance.Areas.get(id: Int(sqlite3_column_int(sqlPointer, 2)))
+                
+                //value.Area = DataContext.Instance.Areas.get(id: Int(sqlite3_column_int(sqlPointer, 2)))
+                
+                value.Area = DataContext.Instance.Areas.get(id: 1)
                 let queryImage = "SELECT path FROM image WHERE areaid = ?"
                 var sqlPointerImage : OpaquePointer? = nil
                 if sqlite3_prepare_v2(dbPointer, queryImage, -1, &sqlPointerImage, nil) == SQLITE_OK {
@@ -122,7 +140,7 @@ class TableContext: NSObject {
     func get(id: Int) -> Table {
         var result = Table()
         let dbPointer = MySqlite.open()
-        let query = "SELECT id, description, areaid, tablestatus FROM table WHERE id=?;"
+        let query = "SELECT id, description, areaid, tablestatus FROM tables WHERE id=?;"
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_int(sqlPointer, 1, Int32(id))
