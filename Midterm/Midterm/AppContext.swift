@@ -25,8 +25,11 @@ class AppContext: NSObject {
         }
         
         for i in 1..<10{
-            let table = Table(Id: i, Name: "Table \(i)", Description: "", Images: [Image](), Area: Areas.first!, TableStatus: 0)
+            let table = Table(Id: i, Name: "Table \(i)", Description: "", Images: [Image](), Area: Areas.first!, TableStatus: (i % 2 == 0 ? 0 : 1))
             Tables.append(table)
+            
+            let menuItem = MenuItem(Id: i, Name: "Food \(i)", Description: "description", Price: 100000, Images: [Image](), MenuItemType: 1)
+            MenuItems.append(menuItem)
         }
     }
     

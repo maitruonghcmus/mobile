@@ -879,7 +879,7 @@
                                     <outlet property="lblFoodItems" destination="aj8-kj-iWD" id="UAq-UT-3bY"/>
                                     <outlet property="lblQuantity" destination="Utg-k1-KGt" id="qVh-W6-DsT"/>
                                     <outlet property="lblTest" destination="bKb-aH-PQq" id="43g-y2-riD"/>
-                                    <segue destination="xnB-r7-Djy" kind="show" id="OeN-Nd-U41"/>
+                                    <segue destination="xnB-r7-Djy" kind="show" identifier="SegueShowTableDetailID" id="OeN-Nd-U41"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -894,9 +894,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbO-3B-7a5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3396" y="-2355"/>
+            <point key="canvasLocation" x="3398" y="-2356"/>
         </scene>
-        <!--Main Table Detail Table View Controller-->
+        <!--Detail-->
         <scene sceneID="bhx-Vp-lqX">
             <objects>
                 <tableViewController id="xnB-r7-Djy" customClass="MainTableDetailTableViewController" customModule="Midterm" customModuleProvider="target" sceneMemberID="viewController">
@@ -959,6 +959,13 @@
                             <outlet property="delegate" destination="xnB-r7-Djy" id="JpC-Nu-Z5r"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Detail" id="xfA-m5-a09">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UFb-lH-o8M">
+                            <connections>
+                                <action selector="btnAdd_Tapped:" destination="xnB-r7-Djy" id="63P-hO-ZOp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XED-hH-pBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1058,7 +1065,7 @@
         <!--Tables-->
         <scene sceneID="NSp-0u-MEQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CZD-fC-rrW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="CZD-fC-rrW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tables" image="Table-25" id="JdL-aw-TdK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fXe-hr-8A8">
@@ -1067,7 +1074,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="NPk-VQ-bAW">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

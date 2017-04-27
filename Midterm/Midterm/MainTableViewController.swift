@@ -12,6 +12,7 @@ class MainTableViewController: UITableViewController {
     
     //MARK: - VARIABLE
     var tables = [Table]()
+    var selectedTable = Table()
     
     //MARK: - UI ELEMENT
     
@@ -21,6 +22,7 @@ class MainTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         tables = AppContext.Instance.Tables
         tableView.reloadData()
+        self.navigationController?.setToolbarHidden(true, animated: false)
     }
     
     override func viewDidLoad() {
@@ -50,21 +52,27 @@ class MainTableViewController: UITableViewController {
         cell.lblFoodItems.text = "10-10-2017, 11:11"
         cell.lblQuantity.text = "300.000"
         
-        if table.TableStatus == 1{
-            cell.backgroundColor = UIColor.cyan
+        if table.TableStatus == 1 {
+            cell.backgroundColor = UIColor.yellow
         }
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedTable = tables[indexPath.row]
+    }
     
-    /*
      //MARK: - NAVIGATION
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "SegueShowTableDetailID" {
+            let destination = segue.destination as! MainTableDetailTableViewController
+            if sender != nil {
+                if selectedTable.Id > 0 && selectedTable.TableStatus == 0 {
+                    destination.isTableAvailable = true
+                    destination.currentTable = selectedTable
+                }
+            }
+        }
      }
-     */
 }

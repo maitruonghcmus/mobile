@@ -67,7 +67,6 @@ class TableTableViewController: UITableViewController {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
             
-            
             //alert
             let alert = UIAlertController(title: "Delete table " + "\(self.tables[index.row].Id)", message: "Are you sure to do this action?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
