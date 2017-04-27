@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AreaTableViewController: UITableViewController, ReloadTableDelegate {
+class AreaTableViewController: UITableViewController {
     // MARK: - local variant
     var areas = [Area]()
     
@@ -21,7 +21,6 @@ class AreaTableViewController: UITableViewController, ReloadTableDelegate {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
-        reload();
     }
     
     override func didReceiveMemoryWarning() {
@@ -129,7 +128,6 @@ class AreaTableViewController: UITableViewController, ReloadTableDelegate {
             else {
                 destination.title = "Add area"
             }
-            destination.delegate = self
         }
     }
     

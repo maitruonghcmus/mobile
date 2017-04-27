@@ -20,12 +20,12 @@ class AppContext: NSObject {
     
     private override init(){
         for i in 1..<3{
-            let area = Area(Id: i, Name: "Area \(i)", Description: "", Images: [String]())
+            let area = Area(Id: i, Name: "Area \(i)", Description: "", Images: [Image]())
             Areas.append(area)
         }
         
         for i in 1..<10{
-            let table = Table(Id: i, Description: "Table \(i)", Images: [String](), Area: Areas.first!, TableStatus: 0)
+            let table = Table(Id: i, Name: "Table \(i)", Description: "", Images: [Image](), Area: Areas.first!, TableStatus: 0)
             Tables.append(table)
         }
     }
