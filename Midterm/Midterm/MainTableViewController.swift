@@ -12,7 +12,9 @@ class MainTableViewController: UITableViewController {
     
     //MARK: - VARIABLE
     var tables = [Table]()
+    var orders = [Order]()
     var selectedTable = Table()
+    var selectedOrder = Order()
     
     //MARK: - UI ELEMENT
     
@@ -21,6 +23,9 @@ class MainTableViewController: UITableViewController {
     //MARK: - UI EVENT
     override func viewWillAppear(_ animated: Bool) {
         tables = DataContext.Instance.Tables.all()
+        for table in tables {
+            orders.append(DataContext.Instance.Orders.getByTableFree(id: table.Id))
+        }
         tableView.reloadData()
         self.navigationController?.setToolbarHidden(true, animated: false)
     }
@@ -47,13 +52,13 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
         
         let table = tables[indexPath.row]
+        let order = orders[indexPath.row]
         
         cell.lblTest.text = table.Name
-        let order = DataContext.Instance.Orders.getByTableFree(id: table.Id)
         cell.lblFoodItems.text = AppUtils.formatDate(date: order.OrderDate)
         cell.lblQuantity.text = String(format: "%f", order.Total)
         
-        if order.Table?.TableStatus == 1 {
+        if table.TableStatus == 1 {
             cell.backgroundColor = UIColor.yellow
         }
         
@@ -62,18 +67,17 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTable = tables[indexPath.row]
+        selectedOrder = orders[indexPath.row]
+        performSegue(withIdentifier: "SegueShowOrderDetailID", sender: nil)
     }
     
      //MARK: - NAVIGATION
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SegueShowTableDetailID" {
+        if segue.identifier == "SegueShowOrderDetailID" {
             let destination = segue.destination as! MainTableDetailTableViewController
-            if sender != nil {
-                if selectedTable.Id > 0 && selectedTable.TableStatus == 0 {
-                    destination.isTableAvailable = true
-                    destination.currentTable = selectedTable
-                }
-            }
+            destination.isTableAvailable = true
+            destination.currentTable = selectedTable
+            destination.currentOrder = selectedOrder
         }
      }
 }

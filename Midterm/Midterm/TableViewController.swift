@@ -96,7 +96,7 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             table.Name = txtTableNumber.text!
             table.Description = txtDescription.text!
             table.Area = areas[areaPicker.selectedRow(inComponent: 0)]
-            table.TableStatus = 1
+            table.TableStatus = 0
             if table.Id == 0 {
                 if DataContext.Instance.Tables.insert(value: table).Id != 0 {
                     AppUtils.DisplayAlertMessage(title: "Success", message: "Table created", controller: self)

@@ -21,7 +21,7 @@ class OrderDetailContext: NSObject {
             sqlite3_bind_int(sqlPointer, 4, Int32(value.Quantity))
             sqlite3_bind_text(sqlPointer, 5, String(format: "%f", value.Amount).cString(using: .utf8), -1, SQLITE_TRANSIENT)
             if sqlite3_step(sqlPointer) == SQLITE_DONE {
-                value.OrderId = Int(sqlite3_last_insert_rowid(dbPointer))
+                value.Id = Int(sqlite3_last_insert_rowid(dbPointer))
                 print("sql create \(tableName) success")
             }
             else {
@@ -122,7 +122,7 @@ class OrderDetailContext: NSObject {
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_int(sqlPointer, 1, Int32(id))
-            if sqlite3_step(sqlPointer) == SQLITE_DONE {
+            if sqlite3_step(sqlPointer) == SQLITE_ROW {
                 result = OrderDetail(Id: Int(sqlite3_column_int(sqlPointer, 0)),
                                      OrderId: Int(sqlite3_column_int(sqlPointer, 1)),
                                      Order: Order(),
@@ -138,6 +138,35 @@ class OrderDetailContext: NSObject {
         }
         else {
             print("query one \(tableName) not ok")
+        }
+        sqlite3_finalize(sqlPointer)
+        sqlite3_close(dbPointer)
+        return result
+    }
+    func allByOrder(id : Int) -> [OrderDetail] {
+        var result = [OrderDetail]()
+        let dbPointer = MySqlite.open()
+        let query = "SELECT id, orderid, sequencenumber, menuitemid, quantity, amount FROM \(tableName) WHERE id=?;"
+        var sqlPointer : OpaquePointer? = nil
+        if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
+            sqlite3_bind_int(sqlPointer, 1, Int32(id))
+            while sqlite3_step(sqlPointer) == SQLITE_ROW {
+                let value = OrderDetail(Id: Int(sqlite3_column_int(sqlPointer, 0)),
+                                        OrderId: Int(sqlite3_column_int(sqlPointer, 1)),
+                                        Order: Order(),
+                                        SequenceNumber: Int(sqlite3_column_int(sqlPointer, 2)),
+                                        MenuItemId: Int(sqlite3_column_int(sqlPointer, 3)),
+                                        MenuItem: MenuItem(),
+                                        Quantity: Int(sqlite3_column_int(sqlPointer, 4)),
+                                        Amount: Double(String(cString: sqlite3_column_text(sqlPointer, 5)!))!)
+                value.Order = DataContext.Instance.Orders.get(id: value.OrderId)
+                value.MenuItem = DataContext.Instance.MenuItems.get(id: value.MenuItemId)
+                result.append(value)
+                print("select \(tableName) success")
+            }
+        }
+        else {
+            print("query all \(tableName) not ok")
         }
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)

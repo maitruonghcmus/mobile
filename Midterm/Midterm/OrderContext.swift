@@ -9,7 +9,7 @@
 import Foundation
 
 class OrderContext: NSObject {
-    let tableName = "order"
+    let tableName = "orders"
     func insert(value: Order) -> Order {
         let dbPointer = MySqlite.open()
         let query = "INSERT INTO \(tableName) (orderdate, customer, tableid, total, currency, status) VALUES (?, ?, ?, ?, ?, ?);"
@@ -151,7 +151,7 @@ class OrderContext: NSObject {
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_int(sqlPointer, 1, Int32(id))
-            if sqlite3_step(sqlPointer) == SQLITE_DONE {
+            if sqlite3_step(sqlPointer) == SQLITE_ROW {
                 result = Order(Id: Int(sqlite3_column_int(sqlPointer, 0)),
                                OrderDate: AppUtils.formatString(string: String(cString: sqlite3_column_text(sqlPointer, 1)!)),
                                Customer: String(cString: sqlite3_column_text(sqlPointer, 2)!),
@@ -178,7 +178,7 @@ class OrderContext: NSObject {
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_int(sqlPointer, 1, Int32(id))
-            if sqlite3_step(sqlPointer) == SQLITE_DONE {
+            if sqlite3_step(sqlPointer) == SQLITE_ROW {
                 result = Order(Id: Int(sqlite3_column_int(sqlPointer, 0)),
                                OrderDate: AppUtils.formatString(string: String(cString: sqlite3_column_text(sqlPointer, 1)!)),
                                Customer: String(cString: sqlite3_column_text(sqlPointer, 2)!),

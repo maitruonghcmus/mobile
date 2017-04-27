@@ -13,6 +13,8 @@
 		8F0A50FB1EB12A3700ECFC99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */; };
 		8F6E17B61EB20FEE00E6CD65 /* OrderContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17B51EB20FEE00E6CD65 /* OrderContext.swift */; };
 		8F6E17B81EB215C400E6CD65 /* OrderDetailContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17B71EB215C400E6CD65 /* OrderDetailContext.swift */; };
+		8F6E17BA1EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17B91EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift */; };
+		8F6E17BC1EB2302D00E6CD65 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17BB1EB2302D00E6CD65 /* OrderDetailViewController.swift */; };
 		8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833D1EACB590008A066A /* AreaTableViewController.swift */; };
 		8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */; };
 		8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783411EACBA06008A066A /* AreaViewController.swift */; };
@@ -54,6 +56,8 @@
 		8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F6E17B51EB20FEE00E6CD65 /* OrderContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderContext.swift; sourceTree = "<group>"; };
 		8F6E17B71EB215C400E6CD65 /* OrderDetailContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailContext.swift; sourceTree = "<group>"; };
+		8F6E17B91EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMenuItemTableViewController.swift; sourceTree = "<group>"; };
+		8F6E17BB1EB2302D00E6CD65 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		8FA7833D1EACB590008A066A /* AreaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewController.swift; sourceTree = "<group>"; };
 		8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
 		8FA783411EACBA06008A066A /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */,
 				8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */,
 				8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */,
+				8F6E17B91EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift */,
+				8F6E17BB1EB2302D00E6CD65 /* OrderDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F6E17BC1EB2302D00E6CD65 /* OrderDetailViewController.swift in Sources */,
 				B10218711EB0906500692FFF /* TableViewController.swift in Sources */,
 				8FD8424F1EAE6DCC00F43A12 /* AreaContext.swift in Sources */,
 				8F08A0571EB023D1007FAA35 /* MenuItemContext.swift in Sources */,
@@ -312,6 +319,7 @@
 				8FDBBFB61EB183FB008FB9C2 /* MenuItemTableViewController.swift in Sources */,
 				B1FA6E3E1EB1657A0097B9ED /* MainTableViewController.swift in Sources */,
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
+				8F6E17BA1EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift in Sources */,
 				B1FA6E381EB10A550097B9ED /* MainTableDetailTableViewCell.swift in Sources */,
 				B1FA6E401EB169D50097B9ED /* MainTableDetailTableViewController.swift in Sources */,
 				B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */,

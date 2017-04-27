@@ -32,7 +32,7 @@ public class MySqlite {
             ("tables","CREATE TABLE IF NOT EXISTS tables (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT, areaid INTEGER, tablestatus INTEGER);"),
             ("image","CREATE TABLE IF NOT EXISTS image (id INTEGER PRIMARY KEY AUTOINCREMENT, areaid INTEGER, tableid INTEGER, menuitemid INTEGER, path TEXT);"),
             ("menuitem","CREATE TABLE IF NOT EXISTS menuitem (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price TEXT, description TEXT, menuitemtype INTEGER);"),
-            ("order","CREATE TABLE IF NOT EXISTS order (id INTEGER PRIMARY KEY AUTOINCREMENT, orderdate TEXT, customer TEXT, tableid INTEGER, total TEXT, currency INTEGER, status INTEGER);"),
+            ("orders","CREATE TABLE IF NOT EXISTS orders (id INTEGER PRIMARY KEY AUTOINCREMENT, orderdate TEXT, customer TEXT, tableid INTEGER, total TEXT, currency INTEGER, status INTEGER);"),
             ("orderdetail","CREATE TABLE IF NOT EXISTS orderdetail (id INTEGER PRIMARY KEY AUTOINCREMENT, orderid INTEGER, sequencenumber INTEGER, menuitemid INTEGER, quantity INTEGER, amount TEXT);")
                     ]
         let dbPointer = open()
@@ -43,11 +43,11 @@ public class MySqlite {
                     print("created \(table) area")
                 }
                 else {
-                    print("create \(table) area fail")
+                    print("create \(table) fail")
                 }
             }
             else {
-                print("query create \(table) student not ok")
+                print("query create \(table) not ok")
             }
             sqlite3_reset(sqlPointer)
         }

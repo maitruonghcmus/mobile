@@ -39,4 +39,8 @@ public final class AppUtils {
         let date = dateFormatter.date(from: string)
         return date!
     }
+    public static func formatPrice(value: Double) -> String {
+        let str = String(format: "%f", value)
+        return str
+    }
 }

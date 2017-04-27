@@ -17,7 +17,7 @@ public class Table: NSObject {
     //var AreaId: Int = 0
     var Area : Area?
     
-    var TableStatus: Int = 1
+    var TableStatus: Int = 0
     //0 = Available
     //1 = Unavailable
     
