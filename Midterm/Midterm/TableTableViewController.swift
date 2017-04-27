@@ -11,21 +11,19 @@ import UIKit
 
 class TableTableViewController: UITableViewController {
 
-    //MARK: *** DATA MODELS
-    var tables = [Table]()
+    //MARK: - VARIABLE
+        var tables = [Table]()
+    
+    //MARK: - UI ELEMENT
     
     
-    //MARK: *** UI ELEMENTS
-    
-    //MARK: *** UI EVENT
-    
-    
-    //MARK: *** CUSTOM FUNCTION
+    //MARK: - CUSTOM FUNCTION
     func loadData() {
         tables = DataContext.Instance.Tables.all()
         tableView.reloadData()
     }
     
+    //MARK: - UI EVENT
     override func viewWillAppear(_ animated: Bool) {
         loadData()
     }
@@ -33,26 +31,26 @@ class TableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    // MARK: - Table view data source
-
+    
+    @IBAction func clickAddButton(_ sender: Any) {
+        performSegue(withIdentifier: "SegueShowTableViewID", sender: nil)
+    }
+    
+    //MARK: - TABLE VIEW
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.tables.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableTableViewCell", for: indexPath) as! TableTableViewCell
         let table = self.tables[indexPath.row]
         
@@ -61,8 +59,6 @@ class TableTableViewController: UITableViewController {
         return cell
     }
     
-    
-    //Override for gesture
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
@@ -92,18 +88,9 @@ class TableTableViewController: UITableViewController {
         
         return [delete, edit]
     }
-    
-    @IBAction func clickAddButton(_ sender: Any) {
-        performSegue(withIdentifier: "SegueShowTableViewID", sender: nil)
-    }
 
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //MARK: - NAVIGATION
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "SegueShowTableViewID" {
             let destination = segue.destination as! TableViewController
             if sender != nil {
@@ -116,6 +103,4 @@ class TableTableViewController: UITableViewController {
             }
         }
     }
- 
-
 }

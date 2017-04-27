@@ -12,11 +12,19 @@ class AreaTableViewController: UITableViewController {
     
     //MARK: - VARIABLE
     var areas = [Area]()
-    // MARK: - Delegate areaview
+    
+    
+    //MARK: - UI ELEMENT
+    
+    //MARK: - CUSTOM FUNCTION
+    
     func reload() {
         areas = DataContext.Instance.Areas.all()
         tableView.reloadData()
     }
+    
+    
+    //MARK: - UI EVENT
     
     override func viewWillAppear(_ animated: Bool) {
         reload()
@@ -32,10 +40,11 @@ class AreaTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    //MARK: - UI EVENT
+    @IBAction func clickAddButton(_ sender: Any) {
+        performSegue(withIdentifier: "SegueShowAreaViewID", sender: nil)
+    }
     
-    
-    // MARK: - TABLE VIEW
+    //MARK: - TABLE VIEW
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -81,12 +90,8 @@ class AreaTableViewController: UITableViewController {
         return [delete, edit]
     }
     
-    @IBAction func clickAddButton(_ sender: Any) {
-        performSegue(withIdentifier: "SegueShowAreaViewID", sender: nil)
-    }
     
-    
-    // MARK: - NAVIGATION
+    //MARK: - NAVIGATION
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SegueShowAreaViewID" {

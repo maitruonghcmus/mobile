@@ -9,15 +9,17 @@
 import UIKit
 
 class MenuItemViewController: UIViewController {
-    //MARK: *** DATA MODELS
-    var menuitem = MenuItem()
-    //MARK: *** UI ELEMENTS
+    //MARK: - VARIABLE
+        var menuitem = MenuItem()
+    
+    //MARK: - UI ELEMENT
     @IBOutlet weak var typeSwitch: UISwitch!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPrice: UITextField!
     @IBOutlet weak var txtDescription: UITextField!
     
-    //MARK: *** UI EVENT
+    
+    //MARK: - CUSTOM FUNCTION
     func load(refresh : Bool) {
         if refresh == true {
             menuitem = MenuItem()
@@ -31,10 +33,47 @@ class MenuItemViewController: UIViewController {
             typeSwitch.setOn(type, animated: true)
         }
     }
+    
+    func DataValidate() -> String{
+        var result = ""
+        
+        if txtName.text!.isEmpty {
+            result += "You must enter the valid name \n"
+        }
+        
+        if txtDescription.text!.isEmpty {
+            result += "You must enter the valid Description \n"
+        }
+        
+        if txtPrice.text!.isEmpty {
+            result += "You must enter the valid Price \n"
+        }
+        
+        return result
+    }
+    
+    //MARK: - UI EVENT
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if self.menuitem.Id != 0 {
+            txtName.text = self.menuitem.Name
+            txtDescription.text = self.menuitem.Description
+            txtPrice.text = String(self.menuitem.Price)
+            let type : Bool = self.menuitem.MenuItemType == 1 ? true : false
+            typeSwitch.setOn(type, animated: true)
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     @IBAction func btnSave_Tapped(_ sender: Any) {
         
         let result = self.DataValidate()
-
+        
         if result.isEmpty {
             
             let type : Int = typeSwitch.isOn == true ? 1 : 0
@@ -64,44 +103,12 @@ class MenuItemViewController: UIViewController {
         }
     }
     
-    func DataValidate() -> String{
-        var result = ""
-        
-        if txtName.text!.isEmpty {
-            result += "You must enter the valid name \n"
-        }
-        
-        if txtDescription.text!.isEmpty {
-            result += "You must enter the valid Description \n"
-        }
-        
-        if txtPrice.text!.isEmpty {
-            result += "You must enter the valid Price \n"
-        }
-        
-        return result
-    }
+    //MARK: - TABLE VIEW
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    //MARK: - NAVIGATION
 
-        if self.menuitem.Id != 0 {
-            txtName.text = self.menuitem.Name
-            txtDescription.text = self.menuitem.Description
-            txtPrice.text = String(self.menuitem.Price)
-            let type : Bool = self.menuitem.MenuItemType == 1 ? true : false
-            typeSwitch.setOn(type, animated: true)
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
     /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -10,21 +10,19 @@ import UIKit
 import Foundation
 
 class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
-
-    //MARK: *** DATA MODELS
     
+    //MARK: - VARIABLE
     var selectedArea : Area = Area()
     var areas = [Area]()
     var table = Table()
-    //MARK: *** UI ELEMENTS
+    let areaPicker = UIPickerView()
     
+    //MARK: - UI ELEMENT
     @IBOutlet weak var txtTableNumber: UITextField!
     @IBOutlet weak var txtArea: UITextField!
     @IBOutlet weak var txtDescription: UITextField!
     
-    let areaPicker = UIPickerView()
-    
-    //MARK: *** UI EVENT
+    //MARK: - CUSTOM FUNCTION
     func load(refresh : Bool) {
         if refresh == true {
             table = Table()
@@ -36,6 +34,56 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             table.Area = areas[areaPicker.selectedRow(inComponent: 0)]
         }
     }
+    
+    func DataValidate(tableNumber: String, area: String, description: String) -> String{
+        var result = ""
+        
+        if tableNumber.isEmpty {
+            result += "You must enter the valid Table Number \n"
+        }
+        
+        if area.isEmpty {
+            result += "Please select the Area \n"
+        }
+        
+        return result
+    }
+    
+    
+    func DisplayAlertMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: - UI EVENT
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        areas = DataContext.Instance.Areas.all()
+        if(!areas.isEmpty){
+            createAreaPicker()
+            selectedArea = areas.first!
+            txtArea.text = selectedArea.Name
+            
+        }else {
+            AppUtils.DisplayAlertMessage(title: "Warning", message: "Data area not found", controller: self)
+        }
+        // set property when area id != 0
+        if self.table.Id != 0 {
+            txtTableNumber.text = table.Name
+            txtArea.text = table.Area?.Name
+            txtDescription.text = table.Description
+        }
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     @IBAction func btnSave_Tapped(_ sender: Any) {
         
         let tableNumber = txtTableNumber.text!
@@ -69,65 +117,13 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             AppUtils.DisplayAlertMessage(title: "Warning", message: result, controller: self)
         }
     }
- 
+    
     
     @IBAction func btnAddImage_Tapped(_ sender: Any) {
         
     }
     
-    //MARK: *** CUSTOM FUNCTION
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        areas = DataContext.Instance.Areas.all()
-        if(!areas.isEmpty){
-            createAreaPicker()
-            selectedArea = areas.first!
-            txtArea.text = selectedArea.Name
-            
-        }else {
-            AppUtils.DisplayAlertMessage(title: "Warning", message: "Data area not found", controller: self)
-        }
-        // set property when area id != 0
-        if self.table.Id != 0 {
-            txtTableNumber.text = table.Name
-            txtArea.text = table.Area?.Name
-            txtDescription.text = table.Description
-        }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func DataValidate(tableNumber: String, area: String, description: String) -> String{
-        var result = ""
-        
-        if tableNumber.isEmpty {
-            result += "You must enter the valid Table Number \n"
-        }
-        
-        if area.isEmpty {
-            result += "Please select the Area \n"
-        }
-        
-        return result
-    }
-    
-    
-    func DisplayAlertMessage(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    
-    //MARK: Picker view
+    //MARK: - PICKER VIEW
     func createAreaPicker(){
         areaPicker.delegate = self
         txtArea.inputView = areaPicker
@@ -139,7 +135,6 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         toolbar.setItems([doneButton], animated: false)
         
         txtArea.inputAccessoryView = toolbar
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -164,13 +159,13 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

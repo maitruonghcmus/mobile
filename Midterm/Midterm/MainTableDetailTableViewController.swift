@@ -10,17 +10,24 @@ import UIKit
 
 class MainTableDetailTableViewController: UITableViewController {
 
+    //MARK: - VARIABLE
+    
+    //MARK: - UI ELEMENT
+    
+    //MARK: - CUSTOM FUNCTION
+    
+    //MARK: - UI EVENT
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    
+    //MARK: - TABLE VIEW
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -30,7 +37,6 @@ class MainTableDetailTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 10
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableDetailTableViewCell", for: indexPath) as! MainTableDetailTableViewCell
@@ -47,7 +53,7 @@ class MainTableDetailTableViewController: UITableViewController {
     
     
     /*
-     // MARK: - Navigation
+    //MARK: - NAVIGATION
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

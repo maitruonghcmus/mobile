@@ -9,40 +9,46 @@
 import UIKit
 
 class MenuItemTableViewController: UITableViewController {
-    // MARK: - local variant
-    var menuitems = [MenuItem]()
-    // MARK: - Delegate areaview
+    
+    //MARK: - VARIABLE
+        var menuitems = [MenuItem]()
+    
+    //MARK: - UI ELEMENT
+    
+    //MARK: - CUSTOM FUNCTION
     func reload() {
         menuitems = DataContext.Instance.MenuItems.all()
         tableView.reloadData()
     }
+    
+    //MARK: - UI EVENT
     override func viewWillAppear(_ animated: Bool) {
         reload()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    
+    @IBAction func clickAddButton(_ sender: Any) {
+        performSegue(withIdentifier: "SegueShowMenuItemID", sender: nil)
+    }
+    
+    //MARK: - TABLE VIEW
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return menuitems.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuitemviewcell", for: indexPath) as! MenuItemTableViewCell
@@ -54,18 +60,6 @@ class MenuItemTableViewController: UITableViewController {
         return cell
     }
  
-
-    
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
-    @IBAction func clickAddButton(_ sender: Any) {
-        performSegue(withIdentifier: "SegueShowMenuItemID", sender: nil)
-    }
-
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
@@ -84,12 +78,13 @@ class MenuItemTableViewController: UITableViewController {
         return [delete, edit]
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
+    //MARK: - NAVIGATION
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "SegueShowMenuItemID" {
             let destination = segue.destination as! MenuItemViewController
             if sender != nil {

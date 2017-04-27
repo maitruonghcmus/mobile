@@ -15,16 +15,18 @@ class AreaViewController: UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate  {
 
-    
-    
-    @IBOutlet weak var textName: UITextField!
-    @IBOutlet weak var textDescription: UITextField!
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+    //MARK: - VARIABLE
     var imagepicker = UIImagePickerController()
     var area:Area = Area()
     
     
+    //MARK: - UI ELEMENT
+    @IBOutlet weak var textName: UITextField!
+    @IBOutlet weak var textDescription: UITextField!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    //MARK: - CUSTOM FUNCTION
     func load(refresh : Bool) {
         if refresh == true {
             area = Area()
@@ -36,6 +38,7 @@ class AreaViewController: UIViewController,
         }
     }
     
+    //MARK: - UI EVENT
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -43,7 +46,7 @@ class AreaViewController: UIViewController,
         // Do any additional setup after loading the view.
         self.load(refresh:false)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,31 +57,6 @@ class AreaViewController: UIViewController,
         imagepicker.sourceType = .photoLibrary
         imagepicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(imagepicker, animated: true, completion: nil)
-    }
-    
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return area.Images.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell  {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionviewcell", for: indexPath) as! CollectionViewCell
-        let data = AppUtils.GetImageData(name: area.Images[indexPath.row].Path)
-        cell.imageView.image = UIImage(data: data)
-        return cell
-    }
-    
-    //MARK: - Delegates
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        dismiss(animated:true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func clickSave(_ sender: Any) {
@@ -102,5 +80,31 @@ class AreaViewController: UIViewController,
                 AppUtils.DisplayAlertMessage(title: "Error", message: "Area updated fail", controller: self)
             }
         }
+    }
+    
+    //MARK: - COLLECTION VIEW
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return area.Images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell  {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionviewcell", for: indexPath) as! CollectionViewCell
+        let data = AppUtils.GetImageData(name: area.Images[indexPath.row].Path)
+        cell.imageView.image = UIImage(data: data)
+        return cell
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated:true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }

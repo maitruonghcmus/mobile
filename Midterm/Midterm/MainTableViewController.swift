@@ -9,9 +9,15 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-
+    
+    //MARK: - VARIABLE
     var tables = [Table]()
-
+    
+    //MARK: - UI ELEMENT
+    
+    //MARK: - CUSTOM FUNCTION
+    
+    //MARK: - UI EVENT
     override func viewWillAppear(_ animated: Bool) {
         tables = AppContext.Instance.Tables
         tableView.reloadData()
@@ -20,25 +26,24 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    // MARK: - Table view data source
-
+    
+    //MARK: - TABLE VIEW
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tables.count
     }
-
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
-
+        
         let table = tables[indexPath.row]
         
         cell.lblTest.text = String(table.Id)
@@ -48,13 +53,13 @@ class MainTableViewController: UITableViewController {
         if table.TableStatus == 1{
             cell.backgroundColor = UIColor.cyan
         }
-
+        
         return cell
     }
     
     
     /*
-     // MARK: - Navigation
+     //MARK: - NAVIGATION
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
