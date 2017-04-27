@@ -30,7 +30,17 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     let areaPicker = UIPickerView()
     
     //MARK: *** UI EVENT
-    
+    func load(refresh : Bool) {
+        if refresh == true {
+            table = Table()
+        }
+        // set property when area id != 0
+        if self.table.Id != 0 {
+            table.Name = txtTableNumber.text!
+            table.Description = txtDescription.text!
+            table.Area = areas[areaPicker.selectedRow(inComponent: 0)]
+        }
+    }
     @IBAction func btnSave_Tapped(_ sender: Any) {
         
         let tableNumber = txtTableNumber.text!
@@ -48,6 +58,7 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 if DataContext.Instance.Tables.insert(value: table).Id != 0 {
                     AppUtils.DisplayAlertMessage(title: "Success", message: "Table created", controller: self)
                     delegate?.reload()
+                    load(refresh: true)
                 }else {
                     AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)
                 }

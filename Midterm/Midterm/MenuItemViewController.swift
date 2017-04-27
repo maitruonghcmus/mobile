@@ -23,7 +23,19 @@ class MenuItemViewController: UIViewController {
     @IBOutlet weak var txtDescription: UITextField!
     
     //MARK: *** UI EVENT
-    
+    func load(refresh : Bool) {
+        if refresh == true {
+            menuitem = MenuItem()
+        }
+        // set property when area id != 0
+        if self.menuitem.Id != 0 {
+            txtName.text = self.menuitem.Name
+            txtDescription.text = self.menuitem.Description
+            txtPrice.text = String(self.menuitem.Price)
+            let type : Bool = self.menuitem.MenuItemType == 1 ? true : false
+            typeSwitch.setOn(type, animated: true)
+        }
+    }
     @IBAction func btnSave_Tapped(_ sender: Any) {
         
         let result = self.DataValidate()
@@ -39,6 +51,7 @@ class MenuItemViewController: UIViewController {
             if menuitem.Id == 0 {
                 if DataContext.Instance.MenuItems.insert(value: menuitem).Id != 0 {
                     AppUtils.DisplayAlertMessage(title: "Success", message: "Menuitem created", controller: self)
+                    load(refresh:true)
                     delegate?.reload()
                 }else {
                     AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)

@@ -16,7 +16,7 @@ class MenuItemContext {
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_text(sqlPointer, 1, value.Name.cString(using: .utf8), -1, SQLITE_TRANSIENT)
-            sqlite3_bind_text(sqlPointer, 2, String(format: "%f", value.Price as CVarArg).cString(using: .utf8), -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(sqlPointer, 2, String(format: "%f", value.Price).cString(using: .utf8), -1, SQLITE_TRANSIENT)
             sqlite3_bind_text(sqlPointer, 3, value.Description.cString(using: .utf8), -1, SQLITE_TRANSIENT)
             sqlite3_bind_int(sqlPointer, 4, Int32(value.MenuItemType))
             if sqlite3_step(sqlPointer) == SQLITE_DONE {
@@ -86,7 +86,7 @@ class MenuItemContext {
     func all() -> [MenuItem] {
         var result = [MenuItem]()
         let dbPointer = MySqlite.open()
-        let query = "SELECT id, name, price, description, menuitemtype FROM \(tableName);"
+        let query = "SELECT id, name, description, price, menuitemtype FROM \(tableName);"
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             while sqlite3_step(sqlPointer) == SQLITE_ROW {
@@ -111,7 +111,7 @@ class MenuItemContext {
     func get(id: Int) -> MenuItem {
         var result = MenuItem()
         let dbPointer = MySqlite.open()
-        let query = "SELECT id, name, price, description, menuitemtype FROM menuitem WHERE id=?;"
+        let query = "SELECT id, name, description, price, menuitemtype FROM menuitem WHERE id=?;"
         var sqlPointer : OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_int(sqlPointer, 1, Int32(id))

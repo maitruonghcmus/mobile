@@ -26,16 +26,24 @@ class AreaViewController: UIViewController,
     var imagepicker = UIImagePickerController()
     var delegate : ReloadTableDelegate? = nil
     var area:Area = Area()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        // Do any additional setup after loading the view.
+    
+    func load(refresh : Bool) {
+        if refresh == true {
+            area = Area()
+        }
         // set property when area id != 0
         if self.area.Id != 0 {
             textName.text = area.Name
             textDescription.text = area.Description
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        // Do any additional setup after loading the view.
+        self.load(refresh:false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +90,7 @@ class AreaViewController: UIViewController,
         if self.area.Id == 0 {
             if DataContext.Instance.Areas.insert(value: self.area).Id != 0 {
                 AppUtils.DisplayAlertMessage(title: "Success", message: "Area created", controller: self)
+                self.load(refresh:true)
                 // call reload areas in AreaTableViewController
                 delegate?.reload()
             }
