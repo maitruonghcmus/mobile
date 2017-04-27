@@ -55,7 +55,7 @@ class MenuItemTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuitemviewcell", for: indexPath) as! MenuItemTableViewCell
         let menuitem = self.menuitems[indexPath.row]
         cell.nameText.text  = "\(menuitem.Name)"
-        cell.priceText.text  = "\(menuitem.Price)"
+        cell.priceText.text  = AppUtils.FormatCurrency(money: menuitem.Price)
         cell.descriptionText.text  = "\(menuitem.Description)"
 
         return cell

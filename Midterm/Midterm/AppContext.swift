@@ -37,8 +37,8 @@ class AppContext: NSObject {
     }
     
     func calcRevenueByDate(date: Date) -> Double {
-        //let orders = DataContext.Instance.Orders.all()
-        let orders = AppContext.Instance.Orders
+        let orders = DataContext.Instance.Orders.all()
+        //let orders = AppContext.Instance.Orders
         let count = orders.count
         var sum = 0.0
         
@@ -53,8 +53,8 @@ class AppContext: NSObject {
     }
     
     func calcRevenueByMonth(month: Int, year: Int) -> Double {
-        //let orders = DataContext.Instance.Orders.all()
-        let orders = AppContext.Instance.Orders
+        let orders = DataContext.Instance.Orders.all()
+        //let orders = AppContext.Instance.Orders
         let count = orders.count
         var sum = 0.0
         if count > 0{
@@ -73,8 +73,8 @@ class AppContext: NSObject {
     }
     
     func calcRevenueByYear(year: Int) -> Double {
-        //let orders = DataContext.Instance.Orders.all()
-        let orders = AppContext.Instance.Orders
+        let orders = DataContext.Instance.Orders.all()
+        //let orders = AppContext.Instance.Orders
         let count = orders.count
         var sum = 0.0
         if count > 0{
