@@ -19,4 +19,12 @@ public final class AppUtils {
         let data = NSData(contentsOf: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(name))
         return data! as Data
     }
+	public static func RandomInt() -> Int {
+        var result = 0
+        
+        let randomNum:UInt32 = arc4random_uniform(1000) // range is 0 to 999
+        result = Int(randomNum)
+        
+        return result
+    }
 }

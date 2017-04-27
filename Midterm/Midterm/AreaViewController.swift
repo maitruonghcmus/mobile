@@ -15,12 +15,15 @@ class AreaViewController: UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate  {
 
+    
+    
     @IBOutlet weak var textName: UITextField!
     @IBOutlet weak var textDescription: UITextField!
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var imagepicker = UIImagePickerController()
     var area:Area = Area()
+    
     
     func load(refresh : Bool) {
         if refresh == true {
@@ -100,16 +103,4 @@ class AreaViewController: UIViewController,
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-            
-        }
-    }
-     */
 }
