@@ -1,44 +1,31 @@
 //
-//  TableTableViewController.swift
+//  MainTableDetailTableViewController.swift
 //  Midterm
 //
-//  Created by Truong Mai on 4/26/17.
+//  Created by Truong Mai on 4/27/17.
 //  Copyright © 2017 IMIT. All rights reserved.
 //
 
 import UIKit
 
-class TableTableViewController: UITableViewController {
+class MainTableDetailTableViewController: UITableViewController {
 
-    //MARK: *** DATA MODELS
-    var tables = [Table]()
+    @IBOutlet weak var btnPay: UIToolbar!
     
-    
-    //MARK: *** UI ELEMENTS
-    
-    
-    
-    //MARK: *** UI EVENT
-    
-    
-    
-    //MARK: *** CUSTOM FUNCTION
-    func loadData() {
-        tables = DataContext.Instance.Tables.all()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        loadData()
-        tableView.reloadData()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData();
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -50,50 +37,20 @@ class TableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.tables.count
+        return 1
     }
+
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableTableViewCell", for: indexPath) as! MainTableTableViewCell
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableTableViewCell", for: indexPath) as! TableTableViewCell
-        let table = self.tables[indexPath.row]
-        
-        cell.lblTableName.text  = "\(table.Id)"
-        cell.lblAreaName.text = "\(table.Area?.Name ?? "")"
+        // Configure the cell...
+        cell.lblName.text = "aaaaaaa"
+
         return cell
     }
-    
-    
-    //Override for gesture
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
-            self.performSegue(withIdentifier: "SegueShowTableViewID", sender: index.row)
-        }
-        
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
-            
-            
-            //alert
-            let alert = UIAlertController(title: "Delete table " + "\(self.tables[index.row].Id)", message: "Are you sure to do this action?", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                print("Handle Ok logic here")
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            
-            
-            
-            //DataContext.Instance.Tables.delete(id: self.tables[index.row].Id)
-            self.loadData()
-            tableView.reloadData()
-        }
-        
-        return [delete, edit]
-    }
-    
-    
+
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
