@@ -30,6 +30,7 @@ class MenuItemTableViewController: UITableViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
+        tableView.rowHeight = 115
     }
     
     override func didReceiveMemoryWarning() {

@@ -14,6 +14,7 @@ class MenuItemTableViewCell: UITableViewCell {
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var priceText: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
