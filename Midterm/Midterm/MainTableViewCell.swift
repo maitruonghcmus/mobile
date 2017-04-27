@@ -1,5 +1,5 @@
 //
-//  MainTableTableViewCell.swift
+//  TestTableViewCell.swift
 //  Midterm
 //
 //  Created by Truong Mai on 4/27/17.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MainTableTableViewCell: UITableViewCell {
+class MainTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblFoodItems: UILabel!
-    @IBOutlet weak var lblTotal: UILabel!
+    @IBOutlet weak var lblTest: UILabel!
     
+    @IBOutlet weak var lblFoodItems: UILabel!
+    
+    @IBOutlet weak var lblQuantity: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
