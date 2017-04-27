@@ -10,6 +10,7 @@
 		8F08A0531EB01A8E007FAA35 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A0521EB01A8E007FAA35 /* Image.swift */; };
 		8F08A0551EB01B89007FAA35 /* ImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A0541EB01B89007FAA35 /* ImageContext.swift */; };
 		8F08A0571EB023D1007FAA35 /* MenuItemContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A0561EB023D1007FAA35 /* MenuItemContext.swift */; };
+		8F0A50FB1EB12A3700ECFC99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */; };
 		8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833D1EACB590008A066A /* AreaTableViewController.swift */; };
 		8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */; };
 		8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783411EACBA06008A066A /* AreaViewController.swift */; };
@@ -19,6 +20,9 @@
 		8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */; };
 		8FD8424D1EAE6C1200F43A12 /* TableContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8424C1EAE6C1200F43A12 /* TableContext.swift */; };
 		8FD8424F1EAE6DCC00F43A12 /* AreaContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8424E1EAE6DCB00F43A12 /* AreaContext.swift */; };
+		8FDBBFB61EB183FB008FB9C2 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */; };
+		8FDBBFB81EB1841B008FB9C2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */; };
+		8FDBBFBA1EB18434008FB9C2 /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */; };
 		B102186F1EB0903900692FFF /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102186E1EB0903900692FFF /* TableTableViewController.swift */; };
 		B10218711EB0906500692FFF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218701EB0906500692FFF /* TableViewController.swift */; };
 		B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218721EB0979300692FFF /* TableTableViewCell.swift */; };
@@ -29,7 +33,6 @@
 		B181D2BA1EA4FA4C00CCFA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181D2B91EA4FA4C00CCFA01 /* AppDelegate.swift */; };
 		B181D2BF1EA4FA4C00CCFA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B181D2BD1EA4FA4C00CCFA01 /* Main.storyboard */; };
 		B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B181D2C01EA4FA4C00CCFA01 /* Midterm.xcdatamodeld */; };
-		B181D2C41EA4FA4C00CCFA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B181D2C31EA4FA4C00CCFA01 /* Assets.xcassets */; };
 		B181D2C71EA4FA4C00CCFA01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B181D2C51EA4FA4C00CCFA01 /* LaunchScreen.storyboard */; };
 		B181D2D21EA4FBDD00CCFA01 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181D2D11EA4FBDD00CCFA01 /* Table.swift */; };
 		B181D2D41EA4FBEF00CCFA01 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181D2D31EA4FBEF00CCFA01 /* Area.swift */; };
@@ -46,6 +49,7 @@
 		8F08A0521EB01A8E007FAA35 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		8F08A0541EB01B89007FAA35 /* ImageContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContext.swift; sourceTree = "<group>"; };
 		8F08A0561EB023D1007FAA35 /* MenuItemContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemContext.swift; sourceTree = "<group>"; };
+		8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FA7833D1EACB590008A066A /* AreaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewController.swift; sourceTree = "<group>"; };
 		8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
 		8FA783411EACBA06008A066A /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,9 @@
 		8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8FD8424C1EAE6C1200F43A12 /* TableContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableContext.swift; sourceTree = "<group>"; };
 		8FD8424E1EAE6DCB00F43A12 /* AreaContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaContext.swift; sourceTree = "<group>"; };
+		8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
+		8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		B102186E1EB0903900692FFF /* TableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
 		B10218701EB0906500692FFF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		B10218721EB0979300692FFF /* TableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,7 +74,6 @@
 		B181D2B91EA4FA4C00CCFA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B181D2BE1EA4FA4C00CCFA01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B181D2C11EA4FA4C00CCFA01 /* Midterm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Midterm.xcdatamodel; sourceTree = "<group>"; };
-		B181D2C31EA4FA4C00CCFA01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B181D2C61EA4FA4C00CCFA01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B181D2C81EA4FA4C00CCFA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B181D2D11EA4FBDD00CCFA01 /* Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				B10218721EB0979300692FFF /* TableTableViewCell.swift */,
 				B1FA6E371EB10A550097B9ED /* MainTableDetailTableViewCell.swift */,
 				B1FA6E3B1EB164EA0097B9ED /* MainTableViewCell.swift */,
+				8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -165,7 +172,7 @@
 				B181D2CF1EA4FA5D00CCFA01 /* View */,
 				B181D2CE1EA4FA5700CCFA01 /* Model */,
 				B181D2B91EA4FA4C00CCFA01 /* AppDelegate.swift */,
-				B181D2C31EA4FA4C00CCFA01 /* Assets.xcassets */,
+				8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */,
 				B181D2C81EA4FA4C00CCFA01 /* Info.plist */,
 				B181D2C01EA4FA4C00CCFA01 /* Midterm.xcdatamodeld */,
 			);
@@ -203,6 +210,8 @@
 				B10218701EB0906500692FFF /* TableViewController.swift */,
 				B1FA6E3D1EB1657A0097B9ED /* MainTableViewController.swift */,
 				B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */,
+				8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */,
+				8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -267,7 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B181D2C71EA4FA4C00CCFA01 /* LaunchScreen.storyboard in Resources */,
-				B181D2C41EA4FA4C00CCFA01 /* Assets.xcassets in Resources */,
+				8F0A50FB1EB12A3700ECFC99 /* Assets.xcassets in Resources */,
 				B181D2BF1EA4FA4C00CCFA01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +301,7 @@
 				8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */,
 				B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */,
 				8F08A0551EB01B89007FAA35 /* ImageContext.swift in Sources */,
+				8FDBBFB61EB183FB008FB9C2 /* MenuItemTableViewController.swift in Sources */,
 				B1FA6E3E1EB1657A0097B9ED /* MainTableViewController.swift in Sources */,
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
 				B1FA6E381EB10A550097B9ED /* MainTableDetailTableViewCell.swift in Sources */,
@@ -303,6 +313,8 @@
 				8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */,
 				8F08A0531EB01A8E007FAA35 /* Image.swift in Sources */,
 				B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */,
+				8FDBBFB81EB1841B008FB9C2 /* MenuItemTableViewCell.swift in Sources */,
+				8FDBBFBA1EB18434008FB9C2 /* MenuItemViewController.swift in Sources */,
 				B181D2D61EA4FC1200CCFA01 /* MenuItem.swift in Sources */,
 				8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */,
 				B181D2D41EA4FBEF00CCFA01 /* Area.swift in Sources */,

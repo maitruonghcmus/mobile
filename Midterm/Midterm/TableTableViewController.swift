@@ -8,14 +8,18 @@
 
 import UIKit
 
-class TableTableViewController: UITableViewController {
+
+class TableTableViewController: UITableViewController, ReloadTableTableDelegate {
 
     //MARK: *** DATA MODELS
     var tables = [Table]()
     
     
     //MARK: *** UI ELEMENTS
-    
+    func reload() {
+        tables = DataContext.Instance.Tables.all()
+        tableView.reloadData()
+    }
     
     
     //MARK: *** UI EVENT
@@ -60,8 +64,8 @@ class TableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableTableViewCell", for: indexPath) as! TableTableViewCell
         let table = self.tables[indexPath.row]
         
-        cell.lblTableName.text  = "\(table.Area?.Name ?? "NULL") - \(table.Id)"
-        //cell.lblAreaName.text = "\(table.Area?.Name ?? "")"
+        cell.lblTableName.text  = "\(table.Name)"
+        cell.lblAreaName.text = "\((table.Area?.Name)!)"
         return cell
     }
     
@@ -79,7 +83,12 @@ class TableTableViewController: UITableViewController {
             //alert
             let alert = UIAlertController(title: "Delete table " + "\(self.tables[index.row].Id)", message: "Are you sure to do this action?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                print("Handle Ok logic here")
+                if DataContext.Instance.Tables.delete(id: self.tables[index.row].Id) == true {
+                    self.reload()
+                }
+                else {
+                    AppUtils.DisplayAlertMessage(title: "Error", message: "Table delete fail", controller: self)
+                }
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -92,6 +101,9 @@ class TableTableViewController: UITableViewController {
         return [delete, edit]
     }
     
+    @IBAction func clickAddButton(_ sender: Any) {
+        performSegue(withIdentifier: "SegueShowTableViewID", sender: nil)
+    }
     
     /*
     // Override to support conditional editing of the table view.
@@ -128,14 +140,26 @@ class TableTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "SegueShowTableViewID" {
+            let destination = segue.destination as! TableViewController
+            if sender != nil {
+                let row = sender as! Int
+                destination.table = self.tables[row]
+                destination.title = "Edit table"
+            }
+            else {
+                destination.title = "Add table"
+            }
+            destination.delegate = self
+        }
     }
-    */
+ 
 
 }

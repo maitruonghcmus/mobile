@@ -1,18 +1,19 @@
 //
-//  TableTableViewCell.swift
+//  MenuItemTableViewCell.swift
 //  Midterm
 //
-//  Created by Truong Mai on 4/26/17.
+//  Created by An Le on 4/27/17.
 //  Copyright © 2017 IMIT. All rights reserved.
 //
 
 import UIKit
 
-class TableTableViewCell: UITableViewCell {
+class MenuItemTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblTableName: UILabel!
-    @IBOutlet weak var lblAreaName: UILabel!
-        
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var nameText: UILabel!
+    @IBOutlet weak var priceText: UILabel!
+    @IBOutlet weak var descriptionText: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

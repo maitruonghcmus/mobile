@@ -9,14 +9,18 @@
 import UIKit
 import Foundation
 
+protocol ReloadTableTableDelegate{
+    func reload()
+}
+
 class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
 
     //MARK: *** DATA MODELS
     
     var selectedArea : Area = Area()
     var areas = [Area]()
-    
-
+    var delegate : ReloadTableTableDelegate? = nil
+    var table = Table()
     //MARK: *** UI ELEMENTS
     
     @IBOutlet weak var txtTableNumber: UITextField!
@@ -26,7 +30,17 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     let areaPicker = UIPickerView()
     
     //MARK: *** UI EVENT
-    
+    func load(refresh : Bool) {
+        if refresh == true {
+            table = Table()
+        }
+        // set property when area id != 0
+        if self.table.Id != 0 {
+            table.Name = txtTableNumber.text!
+            table.Description = txtDescription.text!
+            table.Area = areas[areaPicker.selectedRow(inComponent: 0)]
+        }
+    }
     @IBAction func btnSave_Tapped(_ sender: Any) {
         
         let tableNumber = txtTableNumber.text!
@@ -36,16 +50,26 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let result = self.DataValidate(tableNumber: tableNumber, area: area, description: description)
         
         if result.isEmpty {
-            let table = Table(Id: Int(tableNumber)!, Description: description, Images: [String](), Area: selectedArea, TableStatus: 1)
-            
-            //let isSuccess = DataContext.Instance.Tables.insert(value: table)
-            let isSuccess = AppContext.Instance.AddTable(table: table)
-            
-            if isSuccess{
-                AppUtils.DisplayAlertMessage(title: "Success", message: "Table created", controller: self)
+            table.Name = txtTableNumber.text!
+            table.Description = txtDescription.text!
+            table.Area = areas[areaPicker.selectedRow(inComponent: 0)]
+            table.TableStatus = 1
+            if table.Id == 0 {
+                if DataContext.Instance.Tables.insert(value: table).Id != 0 {
+                    AppUtils.DisplayAlertMessage(title: "Success", message: "Table created", controller: self)
+                    delegate?.reload()
+                    load(refresh: true)
+                }else {
+                    AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)
+                }
             }
             else {
-                AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)
+                if DataContext.Instance.Tables.update(value: table) == true {
+                    AppUtils.DisplayAlertMessage(title: "Success", message: "Table updated", controller: self)
+                    delegate?.reload()
+                }else {
+                    AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)
+                }
             }
         }
         else{
@@ -65,8 +89,7 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //areas = DataContext.Instance.Areas.all()
-        areas = AppContext.Instance.Areas
+        areas = DataContext.Instance.Areas.all()
         if(!areas.isEmpty){
             createAreaPicker()
             selectedArea = areas.first!
@@ -74,6 +97,12 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             
         }else {
             AppUtils.DisplayAlertMessage(title: "Warning", message: "Data area not found", controller: self)
+        }
+        // set property when area id != 0
+        if self.table.Id != 0 {
+            txtTableNumber.text = table.Name
+            txtArea.text = table.Area?.Name
+            txtDescription.text = table.Description
         }
         
     }

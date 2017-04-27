@@ -9,6 +9,10 @@
 import UIKit
 import Foundation
 
+protocol ReloadTableDelegate{
+    func reload()
+}
+
 class AreaViewController: UIViewController,
     UICollectionViewDelegateFlowLayout,
     UICollectionViewDataSource,
@@ -20,18 +24,26 @@ class AreaViewController: UIViewController,
     
     @IBOutlet weak var collectionView: UICollectionView!
     var imagepicker = UIImagePickerController()
-    
+    var delegate : ReloadTableDelegate? = nil
     var area:Area = Area()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        // Do any additional setup after loading the view.
+    
+    func load(refresh : Bool) {
+        if refresh == true {
+            area = Area()
+        }
         // set property when area id != 0
         if self.area.Id != 0 {
             textName.text = area.Name
             textDescription.text = area.Description
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        // Do any additional setup after loading the view.
+        self.load(refresh:false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,8 +69,8 @@ class AreaViewController: UIViewController,
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell  {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionviewcell", for: indexPath) as! CollectionViewCell
-        let data = NSData(contentsOf: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(area.Images[indexPath.row]))
-        cell.imageView.image = UIImage(data: data! as Data)
+        let data = AppUtils.GetImageData(name: area.Images[indexPath.row].Path)
+        cell.imageView.image = UIImage(data: data)
         return cell
     }
     
@@ -71,41 +83,42 @@ class AreaViewController: UIViewController,
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func clickSave() {
-        
-        if textName.text!.isEmpty{
-            AppUtils.DisplayAlertMessage(title: "Error", message: "You must enter a name of area", controller: self)
+    @IBAction func clickSave(_ sender: Any) {
+        self.area.Name = textName.text!
+        self.area.Description = textDescription.text!
+        // check id = 0 do insert and id != 0 do update
+        if self.area.Id == 0 {
+            if DataContext.Instance.Areas.insert(value: self.area).Id != 0 {
+                AppUtils.DisplayAlertMessage(title: "Success", message: "Area created", controller: self)
+                self.load(refresh:true)
+                // call reload areas in AreaTableViewController
+                delegate?.reload()
+            }
+            else {
+                AppUtils.DisplayAlertMessage(title: "Error", message: "Area created fail", controller: self)
+            }
         }
-        else{
-            performSegue(withIdentifier: "UnwindSegueToAreaTableViewID", sender: nil)
+        else {
+            if DataContext.Instance.Areas.update(value: area) == true {
+                AppUtils.DisplayAlertMessage(title: "Success", message: "Area updated", controller: self)
+                // call reload areas in AreaTableViewController
+                delegate?.reload()
+            }
+            else {
+                AppUtils.DisplayAlertMessage(title: "Error", message: "Area updated fail", controller: self)
+            }
         }
     }
     
-    
-  
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "UnwindSegueToAreaTableViewID" {
-            let destination = segue.destination as! AreaTableViewController
-            // update property
-            self.area.Name = textName.text!
-            self.area.Description = textDescription.text!
-            // check id = 0 do insert and id != 0 do update
-            if self.area.Id == 0 {
-                //DataContext.Instance.Areas.insert(value: self.area)
-                _ = AppContext.Instance.AddArea(area: self.area)
-            }
-            else {
-                //DataContext.Instance.Areas.update(value: area)
-                _ = AppContext.Instance.UpdateArea(area: self.area)
-            }
-            // call reload areas in AreaTableViewController
-            destination.loadData()
-            destination.tableView.reloadData()
+            
         }
     }
+     */
 }
