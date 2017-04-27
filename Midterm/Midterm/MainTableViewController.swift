@@ -75,7 +75,6 @@ class MainTableViewController: UITableViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SegueShowOrderDetailID" {
             let destination = segue.destination as! MainTableDetailTableViewController
-            destination.isTableAvailable = true
             destination.currentTable = selectedTable
             destination.currentOrder = selectedOrder
         }

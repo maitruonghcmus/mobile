@@ -44,6 +44,10 @@ public final class AppUtils {
         return date!
     }
     
+    public static func formatPrice(value: Double) -> String {
+        return String(format: "%f",value)
+    }
+    
     public static func GetDayOfDate(date: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: date)

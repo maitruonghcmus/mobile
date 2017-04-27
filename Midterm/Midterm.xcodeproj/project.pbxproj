@@ -13,8 +13,8 @@
 		8F0A50FB1EB12A3700ECFC99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */; };
 		8F6E17B61EB20FEE00E6CD65 /* OrderContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17B51EB20FEE00E6CD65 /* OrderContext.swift */; };
 		8F6E17B81EB215C400E6CD65 /* OrderDetailContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17B71EB215C400E6CD65 /* OrderDetailContext.swift */; };
-		8F6E17BA1EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17B91EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift */; };
-		8F6E17BC1EB2302D00E6CD65 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17BB1EB2302D00E6CD65 /* OrderDetailViewController.swift */; };
+		8F6E17BF1EB2572800E6CD65 /* ChooseMenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17BD1EB2572800E6CD65 /* ChooseMenuItemTableViewController.swift */; };
+		8F6E17C01EB2572800E6CD65 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17BE1EB2572800E6CD65 /* OrderDetailViewController.swift */; };
 		8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833D1EACB590008A066A /* AreaTableViewController.swift */; };
 		8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */; };
 		8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783411EACBA06008A066A /* AreaViewController.swift */; };
@@ -63,8 +63,8 @@
 		8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F6E17B51EB20FEE00E6CD65 /* OrderContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderContext.swift; sourceTree = "<group>"; };
 		8F6E17B71EB215C400E6CD65 /* OrderDetailContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailContext.swift; sourceTree = "<group>"; };
-		8F6E17B91EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMenuItemTableViewController.swift; sourceTree = "<group>"; };
-		8F6E17BB1EB2302D00E6CD65 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		8F6E17BD1EB2572800E6CD65 /* ChooseMenuItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMenuItemTableViewController.swift; sourceTree = "<group>"; };
+		8F6E17BE1EB2572800E6CD65 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		8FA7833D1EACB590008A066A /* AreaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewController.swift; sourceTree = "<group>"; };
 		8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
 		8FA783411EACBA06008A066A /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +231,8 @@
 		B181D2D01EA4FA6200CCFA01 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8F6E17BD1EB2572800E6CD65 /* ChooseMenuItemTableViewController.swift */,
+				8F6E17BE1EB2572800E6CD65 /* OrderDetailViewController.swift */,
 				8FA7833D1EACB590008A066A /* AreaTableViewController.swift */,
 				8FA783411EACBA06008A066A /* AreaViewController.swift */,
 				B102186E1EB0903900692FFF /* TableTableViewController.swift */,
@@ -319,16 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F6E17BC1EB2302D00E6CD65 /* OrderDetailViewController.swift in Sources */,
 				B10218711EB0906500692FFF /* TableViewController.swift in Sources */,
 				8FD8424F1EAE6DCC00F43A12 /* AreaContext.swift in Sources */,
 				8F08A0571EB023D1007FAA35 /* MenuItemContext.swift in Sources */,
+				8F6E17C01EB2572800E6CD65 /* OrderDetailViewController.swift in Sources */,
 				B10024CE1EB2443300BC6E88 /* MainMenuTableViewCell.swift in Sources */,
 				B10024C81EB239B400BC6E88 /* ReportByYearTableViewCell.swift in Sources */,
 				B181D2DC1EA5082400CCFA01 /* OrderDetail.swift in Sources */,
 				8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */,
 				B102186F1EB0903900692FFF /* TableTableViewController.swift in Sources */,
 				8FD8424D1EAE6C1200F43A12 /* TableContext.swift in Sources */,
+				8F6E17BF1EB2572800E6CD65 /* ChooseMenuItemTableViewController.swift in Sources */,
 				B1439F251EA61374001242D7 /* AppContext.swift in Sources */,
 				8FA783461EACC136008A066A /* MyFileManager.swift in Sources */,
 				8F6E17B61EB20FEE00E6CD65 /* OrderContext.swift in Sources */,

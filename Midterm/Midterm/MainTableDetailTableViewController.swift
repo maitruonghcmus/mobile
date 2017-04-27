@@ -11,7 +11,6 @@ import UIKit
 class MainTableDetailTableViewController: UITableViewController,UIPopoverPresentationControllerDelegate, ReloadTableDelegate {
 
     //MARK: - VARIABLE
-    var isTableAvailable = false
     var currentTable = Table()
     var currentOrder = Order()
     var orderDetail = [OrderDetail]()
@@ -49,21 +48,12 @@ class MainTableDetailTableViewController: UITableViewController,UIPopoverPresent
     //MARK: - TABLE VIEW
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if isTableAvailable {
-            return 0
-        }
-        else {
-            return 1
-        }
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isTableAvailable {
-            return 0
-        }
-        else {
-            return orderDetail.count
-        }
+        return orderDetail.count
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,8 +69,9 @@ class MainTableDetailTableViewController: UITableViewController,UIPopoverPresent
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         detailSelected = orderDetail[indexPath.row]
+        performSegue(withIdentifier: "SegueShowDetailID", sender: nil)
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
