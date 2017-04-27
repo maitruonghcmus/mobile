@@ -13,7 +13,8 @@ class AreaTableViewController: UITableViewController {
     var areas = [Area]()
     
     func loadData() {
-        areas = DataContext.Instance.Areas.all()
+        //areas = DataContext.Instance.Areas.all()
+        areas = AppContext.Instance.Areas
     }
     
     override func viewDidLoad() {
@@ -77,15 +78,15 @@ class AreaTableViewController: UITableViewController {
             //alert
             let alert = UIAlertController(title: "Delete Area " + "\(self.areas[index.row].Name)", message: "Are you sure to do this action?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                 DataContext.Instance.Areas.delete(id: self.areas[index.row].Id)
+                
+                //DataContext.Instance.Areas.delete(id: self.areas[index.row].Id)
+                _ = AppContext.Instance.RemoveArea(area: self.areas[index.row])
+                
                 self.loadData()
                 tableView.reloadData()
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
-            
-            
            
             self.loadData()
             tableView.reloadData()

@@ -11,11 +11,14 @@ import UIKit
 class MainTableViewController: UITableViewController {
 
     var tables = [Table]()
+
+    override func viewWillAppear(_ animated: Bool) {
+        tables = AppContext.Instance.Tables
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tables = DataContext.Instance.Tables.all()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,11 +41,13 @@ class MainTableViewController: UITableViewController {
 
         let table = tables[indexPath.row]
         
-        cell.lblTableName.text = "111"
-        cell.lblDate.text = "10-10-2017"
-        cell.lblTotal.text = "300.000"
+        cell.lblTest.text = String(table.Id)
+        cell.lblFoodItems.text = "10-10-2017, 11:11"
+        cell.lblQuantity.text = "300.000"
         
-        cell.backgroundColor = UIColor.cyan
+        if table.TableStatus == 1{
+            cell.backgroundColor = UIColor.cyan
+        }
 
         return cell
     }

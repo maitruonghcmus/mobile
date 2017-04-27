@@ -16,4 +16,13 @@ public final class AppUtils: NSObject {
         controller.present(alert, animated: true, completion: nil)
     }
     
+    public static func RandomInt() -> Int {
+        var result = 0
+        
+        let randomNum:UInt32 = arc4random_uniform(1000) // range is 0 to 999
+        result = Int(randomNum)
+        
+        return result
+    }
+    
 }

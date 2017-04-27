@@ -37,7 +37,10 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         if result.isEmpty {
             let table = Table(Id: Int(tableNumber)!, Description: description, Images: [String](), Area: selectedArea, TableStatus: 1)
-            let isSuccess = DataContext.Instance.Tables.insert(value: table)
+            
+            //let isSuccess = DataContext.Instance.Tables.insert(value: table)
+            let isSuccess = AppContext.Instance.AddTable(table: table)
+            
             if isSuccess{
                 AppUtils.DisplayAlertMessage(title: "Success", message: "Table created", controller: self)
             }
@@ -62,7 +65,8 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        areas = DataContext.Instance.Areas.all()
+        //areas = DataContext.Instance.Areas.all()
+        areas = AppContext.Instance.Areas
         if(!areas.isEmpty){
             createAreaPicker()
             selectedArea = areas.first!

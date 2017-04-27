@@ -24,7 +24,8 @@ class TableTableViewController: UITableViewController {
     
     //MARK: *** CUSTOM FUNCTION
     func loadData() {
-        tables = DataContext.Instance.Tables.all()
+        //tables = DataContext.Instance.Tables.all()
+        tables = AppContext.Instance.Tables
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,8 +83,6 @@ class TableTableViewController: UITableViewController {
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
-            
             
             //DataContext.Instance.Tables.delete(id: self.tables[index.row].Id)
             self.loadData()

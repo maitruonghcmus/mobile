@@ -96,10 +96,12 @@ class AreaViewController: UIViewController,
             self.area.Description = textDescription.text!
             // check id = 0 do insert and id != 0 do update
             if self.area.Id == 0 {
-                DataContext.Instance.Areas.insert(value: self.area)
+                //DataContext.Instance.Areas.insert(value: self.area)
+                _ = AppContext.Instance.AddArea(area: self.area)
             }
             else {
-                DataContext.Instance.Areas.update(value: area)
+                //DataContext.Instance.Areas.update(value: area)
+                _ = AppContext.Instance.UpdateArea(area: self.area)
             }
             // call reload areas in AreaTableViewController
             destination.loadData()
