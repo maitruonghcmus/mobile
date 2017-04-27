@@ -82,6 +82,8 @@ class AreaViewController: UIViewController,
         if self.area.Id == 0 {
             if DataContext.Instance.Areas.insert(value: self.area).Id != 0 {
                 AppUtils.DisplayAlertMessage(title: "Success", message: "Area created", controller: self)
+                // call reload areas in AreaTableViewController
+                delegate?.reload()
             }
             else {
                 AppUtils.DisplayAlertMessage(title: "Error", message: "Area created fail", controller: self)
@@ -90,13 +92,13 @@ class AreaViewController: UIViewController,
         else {
             if DataContext.Instance.Areas.update(value: area) == true {
                 AppUtils.DisplayAlertMessage(title: "Success", message: "Area updated", controller: self)
+                // call reload areas in AreaTableViewController
+                delegate?.reload()
             }
             else {
                 AppUtils.DisplayAlertMessage(title: "Error", message: "Area updated fail", controller: self)
             }
         }
-        // call reload areas in AreaTableViewController
-        delegate?.reload()
     }
     
     /*

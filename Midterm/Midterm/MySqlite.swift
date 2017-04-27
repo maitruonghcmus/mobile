@@ -29,7 +29,7 @@ public class MySqlite {
     static func createTable() {
         let list : [(String,String)] = [
             ("area","CREATE TABLE IF NOT EXISTS area (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT);"),
-            ("tables","CREATE TABLE IF NOT EXISTS tables (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT, areaid INTEGER, tablestatus INTEGER);"),
+            ("tables","CREATE TABLE IF NOT EXISTS tables (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT, areaid INTEGER, tablestatus INTEGER);"),
             ("image","CREATE TABLE IF NOT EXISTS image (id INTEGER PRIMARY KEY AUTOINCREMENT, areaid INTEGER, tableid INTEGER, menuitemid INTEGER, path TEXT);"),
             ("menuitem","CREATE TABLE IF NOT EXISTS menuitem (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price TEXT, description TEXT, menuitemtype INTEGER);")
                     ]
