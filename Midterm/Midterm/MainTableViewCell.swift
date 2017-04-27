@@ -10,11 +10,11 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblTest: UILabel!
+    @IBOutlet weak var lblTableName: UILabel!
     
-    @IBOutlet weak var lblFoodItems: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
     
-    @IBOutlet weak var lblQuantity: UILabel!
+    @IBOutlet weak var lblTotal: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

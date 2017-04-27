@@ -10,8 +10,12 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
+    var tables = [Table]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tables = DataContext.Instance.Tables.all()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,16 +29,18 @@ class MainTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return tables.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
 
-        cell.lblTest.text = "12121212"
-        cell.lblFoodItems.text = "10"
-        cell.lblQuantity.text = "23"
+        let table = tables[indexPath.row]
+        
+        cell.lblTableName.text = "111"
+        cell.lblDate.text = "10-10-2017"
+        cell.lblTotal.text = "300.000"
         
         cell.backgroundColor = UIColor.cyan
 
