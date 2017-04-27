@@ -9,17 +9,13 @@
 import UIKit
 
 
-class TableTableViewController: UITableViewController, ReloadTableTableDelegate {
+class TableTableViewController: UITableViewController {
 
     //MARK: *** DATA MODELS
     var tables = [Table]()
     
     
     //MARK: *** UI ELEMENTS
-    func reload() {
-        tables = DataContext.Instance.Tables.all()
-        tableView.reloadData()
-    }
     
     
     //MARK: *** UI EVENT
@@ -29,16 +25,15 @@ class TableTableViewController: UITableViewController, ReloadTableTableDelegate 
     //MARK: *** CUSTOM FUNCTION
     func loadData() {
         tables = DataContext.Instance.Tables.all()
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadData()
-        tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData();
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,7 +78,7 @@ class TableTableViewController: UITableViewController, ReloadTableTableDelegate 
             let alert = UIAlertController(title: "Delete table " + "\(self.tables[index.row].Id)", message: "Are you sure to do this action?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                 if DataContext.Instance.Tables.delete(id: self.tables[index.row].Id) == true {
-                    self.reload()
+                    self.loadData()
                 }
                 else {
                     AppUtils.DisplayAlertMessage(title: "Error", message: "Table delete fail", controller: self)
@@ -158,7 +153,6 @@ class TableTableViewController: UITableViewController, ReloadTableTableDelegate 
             else {
                 destination.title = "Add table"
             }
-            destination.delegate = self
         }
     }
  

@@ -53,8 +53,8 @@ class TableContext: NSObject {
         if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
             sqlite3_bind_text(sqlPointer, 1, value.Name.cString(using: .utf8), -1, SQLITE_TRANSIENT)
             sqlite3_bind_text(sqlPointer, 2, value.Description.cString(using: .utf8), -1, SQLITE_TRANSIENT)
-            sqlite3_bind_int(sqlPointer, 3, Int32(value.TableStatus))
-            sqlite3_bind_int(sqlPointer, 4, Int32((value.Area?.Id)!))
+            sqlite3_bind_int(sqlPointer, 3, Int32((value.Area?.Id)!))
+            sqlite3_bind_int(sqlPointer, 4, Int32(value.TableStatus))
             sqlite3_bind_int(sqlPointer, 5, Int32(value.Id))
             if sqlite3_step(sqlPointer) == SQLITE_DONE {
                 print("updated \(tableName) success")

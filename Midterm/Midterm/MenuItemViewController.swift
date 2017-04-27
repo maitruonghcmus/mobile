@@ -7,14 +7,9 @@
 //
 
 import UIKit
-protocol ReloadMenuItemTableDelegate{
-    func reload()
-}
 
 class MenuItemViewController: UIViewController {
     //MARK: *** DATA MODELS
-    
-    var delegate : ReloadMenuItemTableDelegate? = nil
     var menuitem = MenuItem()
     //MARK: *** UI ELEMENTS
     @IBOutlet weak var typeSwitch: UISwitch!
@@ -52,7 +47,6 @@ class MenuItemViewController: UIViewController {
                 if DataContext.Instance.MenuItems.insert(value: menuitem).Id != 0 {
                     AppUtils.DisplayAlertMessage(title: "Success", message: "Menuitem created", controller: self)
                     load(refresh:true)
-                    delegate?.reload()
                 }else {
                     AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)
                 }
@@ -60,7 +54,6 @@ class MenuItemViewController: UIViewController {
             else {
                 if DataContext.Instance.MenuItems.update(value: menuitem) == true {
                     AppUtils.DisplayAlertMessage(title: "Success", message: "Menuitem updated", controller: self)
-                    delegate?.reload()
                 }else {
                     AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)
                 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuItemTableViewController: UITableViewController, ReloadMenuItemTableDelegate {
+class MenuItemTableViewController: UITableViewController {
     // MARK: - local variant
     var menuitems = [MenuItem]()
     // MARK: - Delegate areaview
@@ -16,12 +16,14 @@ class MenuItemTableViewController: UITableViewController, ReloadMenuItemTableDel
         menuitems = DataContext.Instance.MenuItems.all()
         tableView.reloadData()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        reload()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
-        reload();
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,7 +128,6 @@ class MenuItemTableViewController: UITableViewController, ReloadMenuItemTableDel
             else {
                 destination.title = "Add menuitem"
             }
-            destination.delegate = self
         }
     }
     

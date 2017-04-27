@@ -9,17 +9,12 @@
 import UIKit
 import Foundation
 
-protocol ReloadTableTableDelegate{
-    func reload()
-}
-
 class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
 
     //MARK: *** DATA MODELS
     
     var selectedArea : Area = Area()
     var areas = [Area]()
-    var delegate : ReloadTableTableDelegate? = nil
     var table = Table()
     //MARK: *** UI ELEMENTS
     
@@ -57,7 +52,6 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             if table.Id == 0 {
                 if DataContext.Instance.Tables.insert(value: table).Id != 0 {
                     AppUtils.DisplayAlertMessage(title: "Success", message: "Table created", controller: self)
-                    delegate?.reload()
                     load(refresh: true)
                 }else {
                     AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)
@@ -66,7 +60,6 @@ class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             else {
                 if DataContext.Instance.Tables.update(value: table) == true {
                     AppUtils.DisplayAlertMessage(title: "Success", message: "Table updated", controller: self)
-                    delegate?.reload()
                 }else {
                     AppUtils.DisplayAlertMessage(title: "Error", message: "some error occurred", controller: self)
                 }

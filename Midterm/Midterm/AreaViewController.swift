@@ -9,10 +9,6 @@
 import UIKit
 import Foundation
 
-protocol ReloadTableDelegate{
-    func reload()
-}
-
 class AreaViewController: UIViewController,
     UICollectionViewDelegateFlowLayout,
     UICollectionViewDataSource,
@@ -24,7 +20,6 @@ class AreaViewController: UIViewController,
     
     @IBOutlet weak var collectionView: UICollectionView!
     var imagepicker = UIImagePickerController()
-    var delegate : ReloadTableDelegate? = nil
     var area:Area = Area()
     
     func load(refresh : Bool) {
@@ -91,8 +86,6 @@ class AreaViewController: UIViewController,
             if DataContext.Instance.Areas.insert(value: self.area).Id != 0 {
                 AppUtils.DisplayAlertMessage(title: "Success", message: "Area created", controller: self)
                 self.load(refresh:true)
-                // call reload areas in AreaTableViewController
-                delegate?.reload()
             }
             else {
                 AppUtils.DisplayAlertMessage(title: "Error", message: "Area created fail", controller: self)
@@ -101,8 +94,6 @@ class AreaViewController: UIViewController,
         else {
             if DataContext.Instance.Areas.update(value: area) == true {
                 AppUtils.DisplayAlertMessage(title: "Success", message: "Area updated", controller: self)
-                // call reload areas in AreaTableViewController
-                delegate?.reload()
             }
             else {
                 AppUtils.DisplayAlertMessage(title: "Error", message: "Area updated fail", controller: self)
