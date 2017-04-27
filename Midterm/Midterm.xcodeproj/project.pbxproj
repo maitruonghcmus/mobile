@@ -11,6 +11,8 @@
 		8F08A0551EB01B89007FAA35 /* ImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A0541EB01B89007FAA35 /* ImageContext.swift */; };
 		8F08A0571EB023D1007FAA35 /* MenuItemContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A0561EB023D1007FAA35 /* MenuItemContext.swift */; };
 		8F0A50FB1EB12A3700ECFC99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */; };
+		8F6E17B61EB20FEE00E6CD65 /* OrderContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17B51EB20FEE00E6CD65 /* OrderContext.swift */; };
+		8F6E17B81EB215C400E6CD65 /* OrderDetailContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E17B71EB215C400E6CD65 /* OrderDetailContext.swift */; };
 		8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833D1EACB590008A066A /* AreaTableViewController.swift */; };
 		8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */; };
 		8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA783411EACBA06008A066A /* AreaViewController.swift */; };
@@ -50,6 +52,8 @@
 		8F08A0541EB01B89007FAA35 /* ImageContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContext.swift; sourceTree = "<group>"; };
 		8F08A0561EB023D1007FAA35 /* MenuItemContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemContext.swift; sourceTree = "<group>"; };
 		8F0A50FA1EB12A3700ECFC99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F6E17B51EB20FEE00E6CD65 /* OrderContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderContext.swift; sourceTree = "<group>"; };
+		8F6E17B71EB215C400E6CD65 /* OrderDetailContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailContext.swift; sourceTree = "<group>"; };
 		8FA7833D1EACB590008A066A /* AreaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewController.swift; sourceTree = "<group>"; };
 		8FA7833F1EACB5E7008A066A /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
 		8FA783411EACBA06008A066A /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				8FD8424E1EAE6DCB00F43A12 /* AreaContext.swift */,
 				8F08A0541EB01B89007FAA35 /* ImageContext.swift */,
 				8F08A0561EB023D1007FAA35 /* MenuItemContext.swift */,
+				8F6E17B51EB20FEE00E6CD65 /* OrderContext.swift */,
+				8F6E17B71EB215C400E6CD65 /* OrderDetailContext.swift */,
 			);
 			name = Context;
 			sourceTree = "<group>";
@@ -297,7 +303,9 @@
 				8FD8424D1EAE6C1200F43A12 /* TableContext.swift in Sources */,
 				B1439F251EA61374001242D7 /* AppContext.swift in Sources */,
 				8FA783461EACC136008A066A /* MyFileManager.swift in Sources */,
+				8F6E17B61EB20FEE00E6CD65 /* OrderContext.swift in Sources */,
 				B1439F231EA60312001242D7 /* QueryContext.swift in Sources */,
+				8F6E17B81EB215C400E6CD65 /* OrderDetailContext.swift in Sources */,
 				8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */,
 				B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */,
 				8F08A0551EB01B89007FAA35 /* ImageContext.swift in Sources */,

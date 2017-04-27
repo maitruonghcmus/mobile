@@ -24,8 +24,8 @@ final class DataContext {
     var Areas = AreaContext()
     var Images = ImageContext()
     var MenuItems = MenuItemContext()
-    
-    
+    var Orders = OrderContext()
+    var OrderDetails = OrderDetailContext()
     //MARK: *** Data Models
     
 

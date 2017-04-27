@@ -21,9 +21,21 @@ class Order: NSObject {
     var TableId: Int = 0
     var Table: Table?
     
-    var Total: Decimal = 0.0
+    var Total: Double = 0.0
     
     var Currency: Int = 0
     //VND = 0
     //USD = 1
+    var Status : Int = 0 // 0 : not pay , 1 : pay
+    override init() {}
+    init(Id:Int,OrderDate:Date,Customer:String,TableId:Int,Table:Table,Total:Double,Currency:Int,Status:Int){
+        self.Id = Id
+        self.OrderDate = OrderDate
+        self.Customer = Customer
+        self.TableId = TableId
+        self.Table = Table
+        self.Total = Total
+        self.Currency = Currency
+        self.Status = Status
+    }
 }
