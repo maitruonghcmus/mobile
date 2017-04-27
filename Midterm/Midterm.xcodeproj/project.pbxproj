@@ -27,6 +27,12 @@
 		8FDBBFB61EB183FB008FB9C2 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */; };
 		8FDBBFB81EB1841B008FB9C2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */; };
 		8FDBBFBA1EB18434008FB9C2 /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */; };
+		B10024C61EB2399C00BC6E88 /* ReportByMonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10024C51EB2399C00BC6E88 /* ReportByMonthTableViewCell.swift */; };
+		B10024C81EB239B400BC6E88 /* ReportByYearTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10024C71EB239B400BC6E88 /* ReportByYearTableViewCell.swift */; };
+		B10024CA1EB23A6C00BC6E88 /* ReportByMonthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10024C91EB23A6C00BC6E88 /* ReportByMonthTableViewController.swift */; };
+		B10024CC1EB23A7C00BC6E88 /* ReportByYearTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10024CB1EB23A7C00BC6E88 /* ReportByYearTableViewController.swift */; };
+		B10024CE1EB2443300BC6E88 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10024CD1EB2443300BC6E88 /* MainMenuTableViewCell.swift */; };
+		B10024D01EB2445600BC6E88 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10024CF1EB2445600BC6E88 /* MainMenuTableViewController.swift */; };
 		B102186F1EB0903900692FFF /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102186E1EB0903900692FFF /* TableTableViewController.swift */; };
 		B10218711EB0906500692FFF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218701EB0906500692FFF /* TableViewController.swift */; };
 		B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218721EB0979300692FFF /* TableTableViewCell.swift */; };
@@ -47,6 +53,7 @@
 		B1FA6E3C1EB164EA0097B9ED /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E3B1EB164EA0097B9ED /* MainTableViewCell.swift */; };
 		B1FA6E3E1EB1657A0097B9ED /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E3D1EB1657A0097B9ED /* MainTableViewController.swift */; };
 		B1FA6E401EB169D50097B9ED /* MainTableDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */; };
+		B1FA6E421EB220B20097B9ED /* ReportingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E411EB220B20097B9ED /* ReportingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +78,12 @@
 		8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
+		B10024C51EB2399C00BC6E88 /* ReportByMonthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportByMonthTableViewCell.swift; sourceTree = "<group>"; };
+		B10024C71EB239B400BC6E88 /* ReportByYearTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportByYearTableViewCell.swift; sourceTree = "<group>"; };
+		B10024C91EB23A6C00BC6E88 /* ReportByMonthTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportByMonthTableViewController.swift; sourceTree = "<group>"; };
+		B10024CB1EB23A7C00BC6E88 /* ReportByYearTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportByYearTableViewController.swift; sourceTree = "<group>"; };
+		B10024CD1EB2443300BC6E88 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
+		B10024CF1EB2445600BC6E88 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		B102186E1EB0903900692FFF /* TableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
 		B10218701EB0906500692FFF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		B10218721EB0979300692FFF /* TableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +106,7 @@
 		B1FA6E3B1EB164EA0097B9ED /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		B1FA6E3D1EB1657A0097B9ED /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableDetailTableViewController.swift; sourceTree = "<group>"; };
+		B1FA6E411EB220B20097B9ED /* ReportingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +154,9 @@
 				B1FA6E371EB10A550097B9ED /* MainTableDetailTableViewCell.swift */,
 				B1FA6E3B1EB164EA0097B9ED /* MainTableViewCell.swift */,
 				8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */,
+				B10024C51EB2399C00BC6E88 /* ReportByMonthTableViewCell.swift */,
+				B10024C71EB239B400BC6E88 /* ReportByYearTableViewCell.swift */,
+				B10024CD1EB2443300BC6E88 /* MainMenuTableViewCell.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -222,8 +239,10 @@
 				B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */,
 				8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */,
 				8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */,
-				8F6E17B91EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift */,
-				8F6E17BB1EB2302D00E6CD65 /* OrderDetailViewController.swift */,
+				B1FA6E411EB220B20097B9ED /* ReportingTableViewController.swift */,
+				B10024C91EB23A6C00BC6E88 /* ReportByMonthTableViewController.swift */,
+				B10024CB1EB23A7C00BC6E88 /* ReportByYearTableViewController.swift */,
+				B10024CF1EB2445600BC6E88 /* MainMenuTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -304,6 +323,8 @@
 				B10218711EB0906500692FFF /* TableViewController.swift in Sources */,
 				8FD8424F1EAE6DCC00F43A12 /* AreaContext.swift in Sources */,
 				8F08A0571EB023D1007FAA35 /* MenuItemContext.swift in Sources */,
+				B10024CE1EB2443300BC6E88 /* MainMenuTableViewCell.swift in Sources */,
+				B10024C81EB239B400BC6E88 /* ReportByYearTableViewCell.swift in Sources */,
 				B181D2DC1EA5082400CCFA01 /* OrderDetail.swift in Sources */,
 				8FA7833E1EACB590008A066A /* AreaTableViewController.swift in Sources */,
 				B102186F1EB0903900692FFF /* TableTableViewController.swift in Sources */,
@@ -319,14 +340,17 @@
 				8FDBBFB61EB183FB008FB9C2 /* MenuItemTableViewController.swift in Sources */,
 				B1FA6E3E1EB1657A0097B9ED /* MainTableViewController.swift in Sources */,
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
-				8F6E17BA1EB22DA000E6CD65 /* ChooseMenuItemTableViewController.swift in Sources */,
+				B10024D01EB2445600BC6E88 /* MainMenuTableViewController.swift in Sources */,
 				B1FA6E381EB10A550097B9ED /* MainTableDetailTableViewCell.swift in Sources */,
 				B1FA6E401EB169D50097B9ED /* MainTableDetailTableViewController.swift in Sources */,
 				B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */,
 				B10218751EB0A59600692FFF /* AppUtils.swift in Sources */,
+				B1FA6E421EB220B20097B9ED /* ReportingTableViewController.swift in Sources */,
 				8FA783471EACC136008A066A /* MySqlite.swift in Sources */,
+				B10024CA1EB23A6C00BC6E88 /* ReportByMonthTableViewController.swift in Sources */,
 				B181D2D21EA4FBDD00CCFA01 /* Table.swift in Sources */,
 				8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */,
+				B10024C61EB2399C00BC6E88 /* ReportByMonthTableViewCell.swift in Sources */,
 				8F08A0531EB01A8E007FAA35 /* Image.swift in Sources */,
 				B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */,
 				8FDBBFB81EB1841B008FB9C2 /* MenuItemTableViewCell.swift in Sources */,
@@ -334,6 +358,7 @@
 				B181D2D61EA4FC1200CCFA01 /* MenuItem.swift in Sources */,
 				8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */,
 				B181D2D41EA4FBEF00CCFA01 /* Area.swift in Sources */,
+				B10024CC1EB23A7C00BC6E88 /* ReportByYearTableViewController.swift in Sources */,
 				B181D2BA1EA4FA4C00CCFA01 /* AppDelegate.swift in Sources */,
 				B1FA6E3C1EB164EA0097B9ED /* MainTableViewCell.swift in Sources */,
 			);

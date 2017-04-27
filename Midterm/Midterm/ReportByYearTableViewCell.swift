@@ -1,19 +1,17 @@
 //
-//  MenuItemTableViewCell.swift
+//  ReportByYearTableViewCell.swift
 //  Midterm
 //
-//  Created by An Le on 4/27/17.
+//  Created by Truong Mai on 4/27/17.
 //  Copyright © 2017 IMIT. All rights reserved.
 //
 
 import UIKit
 
-class MenuItemTableViewCell: UITableViewCell {
+class ReportByYearTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var nameText: UILabel!
-    @IBOutlet weak var priceText: UILabel!
-    @IBOutlet weak var descriptionText: UILabel!
+    @IBOutlet weak var lblYear: UILabel!
+    @IBOutlet weak var lblTotal: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

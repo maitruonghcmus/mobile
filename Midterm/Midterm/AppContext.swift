@@ -30,7 +30,65 @@ class AppContext: NSObject {
             
             let menuItem = MenuItem(Id: i, Name: "Food \(i)", Description: "description", Price: 100000, Images: [Image](), MenuItemType: 1)
             MenuItems.append(menuItem)
+            
+            let order = Order(Id: i, OrderDate: Date(), Customer: "anh \(i)", TableId: i, Table: Table(), Total: 100000, Currency: 0, Status: 1)
+            Orders.append(order)
         }
+    }
+    
+    func calcRevenueByDate(date: Date) -> Double {
+        let orders = DataContext.Instance.Orders.all()
+        //let orders = AppContext.Instance.Orders
+        let count = orders.count
+        var sum = 0.0
+        
+        if count > 0{
+            for i in 0..<count {
+                if orders[i].OrderDate == date {
+                    sum += orders[i].Total
+                }
+            }
+        }
+        return sum
+    }
+    
+    func calcRevenueByMonth(month: Int, year: Int) -> Double {
+        let orders = DataContext.Instance.Orders.all()
+        //let orders = AppContext.Instance.Orders
+        let count = orders.count
+        var sum = 0.0
+        if count > 0{
+            for i in 0..<count {
+                let orderMonth = AppUtils.GetMonthOfDate(date: orders[i].OrderDate)
+                //let currentMonth = AppUtils.GetMonthOfDate(date: Date())
+                let orderYear = AppUtils.GetYearOfDate(date: orders[i].OrderDate)
+                //let currentYear = AppUtils.GetYearOfDate(date: Date())
+                
+                if orderMonth == month && orderYear == year {
+                    sum += orders[i].Total
+                }
+            }
+        }
+        return sum
+    }
+    
+    func calcRevenueByYear(year: Int) -> Double {
+        let orders = DataContext.Instance.Orders.all()
+        //let orders = AppContext.Instance.Orders
+        let count = orders.count
+        var sum = 0.0
+        if count > 0{
+            for i in 0..<count {
+                
+                let orderYear = AppUtils.GetYearOfDate(date: orders[i].OrderDate)
+                //let currentYear = AppUtils.GetYearOfDate(date: Date())
+                
+                if orderYear == year {
+                    sum += orders[i].Total
+                }
+            }
+        }
+        return sum
     }
     
     //MARK: *** Add
