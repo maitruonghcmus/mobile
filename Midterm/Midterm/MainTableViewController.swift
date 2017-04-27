@@ -1,5 +1,5 @@
 //
-//  MainTableTableViewController.swift
+//  TestTableViewController.swift
 //  Midterm
 //
 //  Created by Truong Mai on 4/27/17.
@@ -8,45 +8,35 @@
 
 import UIKit
 
-class MainTableDetailTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
+        return 2
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableDetailTableViewCell", for: indexPath) as! MainTableDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
 
+        cell.lblTest.text = "12121212"
+        cell.lblFoodItems.text = "10"
+        cell.lblQuantity.text = "23"
         
-        cell.lblFoodName.text = "Food Name"
-        cell.lblPrice.text = "50.000"
-        cell.lblQuantity.text = "x3"
-        cell.lblAmount.text = "150.000"
-        // Configure the cell...
+        cell.backgroundColor = UIColor.cyan
 
         return cell
     }

@@ -9,12 +9,12 @@
 import UIKit
 
 class MainTableDetailTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var imgFoodImage: UIImageView!
+    
     @IBOutlet weak var lblFoodName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblQuantity: UILabel!
-    @IBOutlet weak var lblTotal: UILabel!
+    @IBOutlet weak var lblAmount: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
