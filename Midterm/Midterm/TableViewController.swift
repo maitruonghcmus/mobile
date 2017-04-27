@@ -13,7 +13,7 @@ protocol ReloadTableTableDelegate{
     func reload()
 }
 
-class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class TableViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     //MARK: *** DATA MODELS
     
