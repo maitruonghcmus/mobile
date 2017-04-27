@@ -20,6 +20,9 @@
 		8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */; };
 		8FD8424D1EAE6C1200F43A12 /* TableContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8424C1EAE6C1200F43A12 /* TableContext.swift */; };
 		8FD8424F1EAE6DCC00F43A12 /* AreaContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8424E1EAE6DCB00F43A12 /* AreaContext.swift */; };
+		8FDBBFB61EB183FB008FB9C2 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */; };
+		8FDBBFB81EB1841B008FB9C2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */; };
+		8FDBBFBA1EB18434008FB9C2 /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */; };
 		B102186F1EB0903900692FFF /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102186E1EB0903900692FFF /* TableTableViewController.swift */; };
 		B10218711EB0906500692FFF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218701EB0906500692FFF /* TableViewController.swift */; };
 		B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10218721EB0979300692FFF /* TableTableViewCell.swift */; };
@@ -57,6 +60,9 @@
 		8FA7834B1EACFE5A008A066A /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8FD8424C1EAE6C1200F43A12 /* TableContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableContext.swift; sourceTree = "<group>"; };
 		8FD8424E1EAE6DCB00F43A12 /* AreaContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaContext.swift; sourceTree = "<group>"; };
+		8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
+		8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		B102186E1EB0903900692FFF /* TableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
 		B10218701EB0906500692FFF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		B10218721EB0979300692FFF /* TableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				B10218721EB0979300692FFF /* TableTableViewCell.swift */,
 				B1FA6E371EB10A550097B9ED /* MainTableDetailTableViewCell.swift */,
 				B1FA6E3B1EB164EA0097B9ED /* MainTableViewCell.swift */,
+				8FDBBFB71EB1841B008FB9C2 /* MenuItemTableViewCell.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -203,6 +210,8 @@
 				B10218701EB0906500692FFF /* TableViewController.swift */,
 				B1FA6E3D1EB1657A0097B9ED /* MainTableViewController.swift */,
 				B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */,
+				8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */,
+				8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 				8FA783421EACBA06008A066A /* AreaViewController.swift in Sources */,
 				B1439F211EA5EA7D001242D7 /* DataContext.swift in Sources */,
 				8F08A0551EB01B89007FAA35 /* ImageContext.swift in Sources */,
+				8FDBBFB61EB183FB008FB9C2 /* MenuItemTableViewController.swift in Sources */,
 				B1FA6E3E1EB1657A0097B9ED /* MainTableViewController.swift in Sources */,
 				B181D2DA1EA5081700CCFA01 /* Order.swift in Sources */,
 				B1FA6E381EB10A550097B9ED /* MainTableDetailTableViewCell.swift in Sources */,
@@ -303,6 +313,8 @@
 				8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */,
 				8F08A0531EB01A8E007FAA35 /* Image.swift in Sources */,
 				B181D2C21EA4FA4C00CCFA01 /* Midterm.xcdatamodeld in Sources */,
+				8FDBBFB81EB1841B008FB9C2 /* MenuItemTableViewCell.swift in Sources */,
+				8FDBBFBA1EB18434008FB9C2 /* MenuItemViewController.swift in Sources */,
 				B181D2D61EA4FC1200CCFA01 /* MenuItem.swift in Sources */,
 				8FA783401EACB5E7008A066A /* AreaTableViewCell.swift in Sources */,
 				B181D2D41EA4FBEF00CCFA01 /* Area.swift in Sources */,

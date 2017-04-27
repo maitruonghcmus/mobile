@@ -11,7 +11,6 @@ import Foundation
 class MenuItemContext {
     let tableName = "menuitem"
     func insert(value: MenuItem) -> MenuItem {
-        let result = value
         let dbPointer = MySqlite.open()
         let query = "INSERT INTO \(tableName) (name, price, description, menuitemtype) VALUES (?, ?, ?, ?);"
         var sqlPointer : OpaquePointer? = nil
@@ -21,8 +20,7 @@ class MenuItemContext {
             sqlite3_bind_text(sqlPointer, 3, value.Description.cString(using: .utf8), -1, SQLITE_TRANSIENT)
             sqlite3_bind_int(sqlPointer, 4, Int32(value.MenuItemType))
             if sqlite3_step(sqlPointer) == SQLITE_DONE {
-                let id = sqlite3_last_insert_rowid(dbPointer)
-                result.Id = Int(id)
+                value.Id = Int(sqlite3_last_insert_rowid(dbPointer))
                 print("created \(tableName) success")
                 
             }
@@ -35,9 +33,10 @@ class MenuItemContext {
         }
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
-        return result
+        return value
     }
-    func update(value: MenuItem) {
+    func update(value: MenuItem) -> Bool {
+        var result = false
         let dbPointer = MySqlite.open()
         let query = "UPDATE \(tableName) SET name = ?, price = ?, description = ?, meuitemtype = ? WHERE id = ?;"
         var sqlPointer : OpaquePointer? = nil
@@ -49,6 +48,7 @@ class MenuItemContext {
             sqlite3_bind_int(sqlPointer, 5, Int32(value.Id))
             if sqlite3_step(sqlPointer) == SQLITE_DONE {
                 print("updated \(tableName) success")
+                result = true
             }
             else {
                 print("update \(tableName) fail")
@@ -59,8 +59,10 @@ class MenuItemContext {
         }
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
+        return result
     }
-    func delete(id: Int) {
+    func delete(id: Int) -> Bool {
+        var result = false
         let dbPointer = MySqlite.open()
         let query = "DELETE FROM \(tableName) WHERE id = ?;"
         var sqlPointer : OpaquePointer? = nil
@@ -68,6 +70,7 @@ class MenuItemContext {
             sqlite3_bind_int(sqlPointer, 1, Int32(id))
             if sqlite3_step(sqlPointer) == SQLITE_DONE {
                 print("delete \(tableName) success")
+                result = true
             }
             else {
                 print("delete \(tableName) success")
@@ -78,6 +81,7 @@ class MenuItemContext {
         }
         sqlite3_finalize(sqlPointer)
         sqlite3_close(dbPointer)
+        return result
     }
     func all() -> [MenuItem] {
         var result = [MenuItem]()
