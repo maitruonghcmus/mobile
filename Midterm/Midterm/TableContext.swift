@@ -145,4 +145,31 @@ class TableContext: NSObject {
         sqlite3_close(dbPointer)
         return result
     }
+    func allTableFree() -> [Table] {
+        var result = [Table]()
+        let dbPointer = MySqlite.open()
+        let query = "SELECT id, description, areaid, tablestatus FROM \(tableName) WHERE tablestatus=0;"
+        var sqlPointer : OpaquePointer? = nil
+        if sqlite3_prepare_v2(dbPointer, query, -1, &sqlPointer, nil) == SQLITE_OK {
+            while sqlite3_step(sqlPointer) == SQLITE_ROW {
+                let value = Table(Id: Int(sqlite3_column_int(sqlPointer, 0)),
+                                  Name: String(cString: sqlite3_column_text(sqlPointer, 1)!),
+                                  Description: String(cString: sqlite3_column_text(sqlPointer, 2)!),
+                                  Images: [Image](),
+                                  Area: Area(),
+                                  TableStatus: Int(sqlite3_column_int(sqlPointer, 4)))
+                value.Area = DataContext.Instance.Areas.get(id: Int(sqlite3_column_int(sqlPointer, 3)))
+                value.Images = DataContext.Instance.Images.all(id: value.Id, tables: .TABLE)
+                result.append(value)
+                print("select \(tableName) success")
+            }
+        }
+        else {
+            print("query all \(tableName) not ok")
+        }
+        sqlite3_finalize(sqlPointer)
+        sqlite3_close(dbPointer)
+        return result
+
+    }
 }

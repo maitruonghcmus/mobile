@@ -27,4 +27,16 @@ public final class AppUtils {
         
         return result
     }
+    public static func formatDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        let string = dateFormatter.string(from: date)
+        return string
+    }
+    public static func formatString(string: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        let date = dateFormatter.date(from: string)
+        return date!
+    }
 }

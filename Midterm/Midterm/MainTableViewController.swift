@@ -20,7 +20,7 @@ class MainTableViewController: UITableViewController {
     
     //MARK: - UI EVENT
     override func viewWillAppear(_ animated: Bool) {
-        tables = AppContext.Instance.Tables
+        tables = DataContext.Instance.Tables.all()
         tableView.reloadData()
         self.navigationController?.setToolbarHidden(true, animated: false)
     }
@@ -48,11 +48,12 @@ class MainTableViewController: UITableViewController {
         
         let table = tables[indexPath.row]
         
-        cell.lblTest.text = String(table.Id)
-        cell.lblFoodItems.text = "10-10-2017, 11:11"
-        cell.lblQuantity.text = "300.000"
+        cell.lblTest.text = table.Name
+        let order = DataContext.Instance.Orders.getByTableFree(id: table.Id)
+        cell.lblFoodItems.text = AppUtils.formatDate(date: order.OrderDate)
+        cell.lblQuantity.text = String(format: "%f", order.Total)
         
-        if table.TableStatus == 1 {
+        if order.Table?.TableStatus == 1 {
             cell.backgroundColor = UIColor.yellow
         }
         
