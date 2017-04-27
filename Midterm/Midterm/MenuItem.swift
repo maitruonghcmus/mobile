@@ -19,7 +19,7 @@ class MenuItem: NSObject {
     var Name: String = ""
     var Price: Double = 0.0
     var Description: String = ""
-    var Images: [String] = []
+    var Images: [Image] = []
     
     var MenuItemType: Int = 1
     //Food = 1
@@ -28,7 +28,7 @@ class MenuItem: NSObject {
     override init(){
     }
     
-    init(Id:Int,Name:String,Description:String,Price:Double,Images:[String], MenuItemType: Int) {
+    init(Id:Int,Name:String,Description:String,Price:Double,Images:[Image], MenuItemType: Int) {
         self.Id = Id
         self.Name = Name
         self.Description = Description

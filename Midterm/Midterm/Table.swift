@@ -10,8 +10,9 @@ import UIKit
 
 public class Table: NSObject {
     var Id: Int = 0
+    var Name: String = ""
     var Description: String = ""
-    var Images: [String] = []
+    var Images: [Image] = []
     
     //var AreaId: Int = 0
     var Area : Area?
@@ -23,8 +24,9 @@ public class Table: NSObject {
     override init(){
     }
     
-    init(Id:Int,Description:String,Images:[String], Area:Area, TableStatus: Int) {
+    init(Id:Int,Name:String,Description:String,Images:[Image], Area:Area, TableStatus: Int) {
         self.Id = Id
+        self.Name = Name
         self.Description = Description
         self.Images = Images
         self.Area = Area
