@@ -43,6 +43,7 @@
 		B1FA6E3C1EB164EA0097B9ED /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E3B1EB164EA0097B9ED /* MainTableViewCell.swift */; };
 		B1FA6E3E1EB1657A0097B9ED /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E3D1EB1657A0097B9ED /* MainTableViewController.swift */; };
 		B1FA6E401EB169D50097B9ED /* MainTableDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */; };
+		B1FA6E421EB220B20097B9ED /* ReportingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA6E411EB220B20097B9ED /* ReportingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		B1FA6E3B1EB164EA0097B9ED /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		B1FA6E3D1EB1657A0097B9ED /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableDetailTableViewController.swift; sourceTree = "<group>"; };
+		B1FA6E411EB220B20097B9ED /* ReportingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				B1FA6E3F1EB169D50097B9ED /* MainTableDetailTableViewController.swift */,
 				8FDBBFB51EB183FB008FB9C2 /* MenuItemTableViewController.swift */,
 				8FDBBFB91EB18434008FB9C2 /* MenuItemViewController.swift */,
+				B1FA6E411EB220B20097B9ED /* ReportingTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				B1FA6E401EB169D50097B9ED /* MainTableDetailTableViewController.swift in Sources */,
 				B10218731EB0979300692FFF /* TableTableViewCell.swift in Sources */,
 				B10218751EB0A59600692FFF /* AppUtils.swift in Sources */,
+				B1FA6E421EB220B20097B9ED /* ReportingTableViewController.swift in Sources */,
 				8FA783471EACC136008A066A /* MySqlite.swift in Sources */,
 				B181D2D21EA4FBDD00CCFA01 /* Table.swift in Sources */,
 				8FA7834C1EACFE5A008A066A /* CollectionViewCell.swift in Sources */,
