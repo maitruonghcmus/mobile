@@ -11,8 +11,7 @@ import UIKit
 class TableTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTableName: UILabel!
-    @IBOutlet weak var lblAreaName: UILabel!
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

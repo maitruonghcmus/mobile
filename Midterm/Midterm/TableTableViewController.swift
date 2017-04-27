@@ -59,8 +59,8 @@ class TableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableTableViewCell", for: indexPath) as! TableTableViewCell
         let table = self.tables[indexPath.row]
         
-        cell.lblTableName.text  = "\(table.Id)"
-        cell.lblAreaName.text = "\(table.Area?.Name ?? "")"
+        cell.lblTableName.text  = "\(table.Area?.Name ?? "NULL") - \(table.Id)"
+        //cell.lblAreaName.text = "\(table.Area?.Name ?? "")"
         return cell
     }
     
